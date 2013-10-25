@@ -14,9 +14,16 @@ A useful tools or tips list for mobile web application developing
  
  [几乎所有设备的屏幕尺寸与像素密度表](http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density "几乎所有设备的屏幕尺寸与像素密度表")
  
+ [移动设备参数表](http://screensiz.es/phone "移动设备参数表")
+ 
+ [ios端移动设备参数速查](http://ivomynttinen.com/blog/the-ios-design-cheat-sheet-volume-2/ "ios端移动设备参数速查")
+ 
  [浏览器兼容表](http://www.quirksmode.org/compatibility.html "浏览器兼容表")
  
  [移动设备查询器](https://deviceatlas.com/device-data/devices "移动设备查询器")
+ 
+ [移动设备适配库](http://51degrees.codeplex.com/ "移动设备适配库")
+ 
  
  [viewport与设备尺寸在线检测器](https://deviceatlas.com/device-data/devices "viewport与设备尺寸在线检测器")
  
@@ -35,6 +42,43 @@ A useful tools or tips list for mobile web application developing
  [css3动画在线制作器](http://ecd.tencent.com/css3/tools.html "css3动画在线制作器")
  
  [css3渐变在线制作器](http://www.colorzilla.com/gradient-editor/ "css3渐变在线制作器")
+ 
+
+[移动端手势表](http://ww1.sinaimg.cn/bmiddle/c2c57f68jw1e4fh7dmw12j20fi2w6qe1.jpg "移动端手势表")
+
+
+[webkit独有的样式分析](http://ued.ctrip.com/blog/wp-content/webkitcss/ "webkit独有的样式分析")
+
+
+##响应式测试工具
+
+ [resize添加到收藏夹后，可直接在浏览器中出现各种分辨率的选择工具来查看不同分辨率下的页面效果](http://lab.maltewassermann.com/viewport-resizer/ "resize")
+ [http://beta.screenqueri.es/](http://beta.screenqueri.es/ "resize")
+ [http://responsivepx.com](http://responsivepx.com "resize")
+ [http://www.responsinator.com/](http://www.responsinator.com/ "resize")
+ [http://resizemybrowser.com/](http://resizemybrowser.com/ "resize")
+  [https://quirktools.com/screenfly/](https://quirktools.com/screenfly/ "resize")
+
+一篇webapp开发的最佳实践与中文总结
+==========
+<http://blog.forecast.io/its-not-a-web-app-its-an-app-you-install-from-the-web/>
+<http://lyric.im/best-practice-for-web-app-development/>
+
+
+来自[maxzhang](https://github.com/maxzhang "ava")的一些移动端经验总结干货
+==========
+
+[移动Web单页应用开发实践——页面结构化](https://github.com/maxzhang/maxzhang.github.com/issues/8 "ava")
+
+[移动Web产品前端开发口诀——“快”](https://github.com/maxzhang/maxzhang.github.com/issues/1 "ava")
+
+[移动Web开发，4行代码检测浏览器是否支持position:fixed](https://github.com/maxzhang/maxzhang.github.com/issues/7 "ava")
+
+[使用border-image实现类似iOS7的1px底边](https://github.com/maxzhang/maxzhang.github.com/issues/4 "ava")
+
+[移动端web页面使用position:fixed问题总结](https://github.com/maxzhang/maxzhang.github.com/issues/2 "ava")
+
+
 
 
 本资料很多引用了指尖上的js系列，在此向作者表示感谢
@@ -57,7 +101,17 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
  
 
 第一个meta标签表示：强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览；
-尤其要注意的是content里多个属性的设置一定要用分号+空格来隔开，如果不规范将不会起作用。
+~~尤其要注意的是content里多个属性的设置一定要用分号+空格来隔开，如果不规范将不会起作用。~~
+
+注意根据[public_00](http://www.weibo.com/avajayam "ava")提供的资料补充，content使用分号作为分隔，在老的浏览器是支持的，但不是规范写法。
+规范的写法应该是使用逗号分隔，参考 
+<http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html>
+<http://developer.android.com/guide/webapps/targeting.html>
+
+
+
+
+
 
 其中：
 * width - viewport的宽度
@@ -76,7 +130,9 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 当你用手指拖动时，其实拖的不是页面，而是viewport。浏览器行为的改变不止是滚动条，交互事件也跟普通桌面不一样。
 (请参考：指尖的下JS 系列文章)
 
- 
+其中viewport相关的知识也可以参考我的文章
+==========
+[此像素非彼像素](http://www.w3cplus.com/css/A-pixel-is-not-a-pixel-is-not-a-pixel.html "pixel")
 
 ##点击与click事件
 
@@ -157,7 +213,9 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 	<style media="all and (orientation:landscape)" type="text/css">
 	#portrait { display: none; }
 	</style>
- 
+
+##手机浏览器常用手势动作监听封装(配合zepto,来自mansonchor)
+<http://wo.poco.cn/manson/post/id/268780>
 ##事件 ： (请参考：指尖的下JS 系列文章)
 
 ##手势事件
@@ -391,6 +449,22 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 	Skew(*deg) 倾斜角度。skewX 和skewY，可简写为：skew(* , *)
 	translate(*,*) 坐标移动。translateX 和translateY，可简写为：translate(* , *)。
  
+ 
+##利用media query监听
+
+media query相信大部分人已经使用过了。其实javascript可以配合media query这么用：
+
+	var mql = window.matchMedia("(orientation: portrait)");
+	mql.addListener(handleOrientationChange);
+	handleOrientationChange(mql); 
+	function handleOrientationChange(mql) {
+	  if (mql.matches) {
+	    alert('The device is currently in portrait orientation ')
+	  } else {
+	    alert('The device is currently in landscape orientation')
+	  }}
+
+我个人理解，是借助了media query接口做的事件监听，所以很强大！
 
 ##锁定 viewport
 
@@ -453,6 +527,29 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 ##flexbox布局模板
 
  [flex模板](http://jsbin.com/ibuwol/2/edit "article5")
+ 
+ [深入了解flex布局](http://www.w3cplus.com/blog/666.html "article6")
+ 
+ 
+ 
+##利用高质量图片优化retina屏幕的显示(来自大漠)
+ 
+ 
+
+ [经典的文章](http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/ "article5")
+
+ [使用CSS3的background-size优化苹果的Retina屏幕的图像显示](http://www.w3cplus.com/css/css-background-size-graphics.html "article5") 
+
+ [使用css sprites来优化你的网站在Retina屏幕下显示](http://www.w3cplus.com/css/using-css-sprites-to-optimize-your-website-for-retina-displays.html "article5") 
+  
+ [一个案例](http://alexthorpe.com/uncategorized/css-sprites-for-retina-display-devices/683/ "article5") 
+ 
+
+##安卓中viewport的width大于device-width时文字无故折行
+
+<http://www.iunbug.com/archives/2013/04/23/798.html>
+
+
 
 ##active的兼容(来自薛端阳)
 
@@ -556,6 +653,11 @@ Iphone 4的一个 CSS 像素实际上表现为一块 2×2 的像素。所以图�
 ##禁止用户选中文字
 
 	-webkit-user-select:none
+	
+##动画效果中，使用translate比使用定位性能高
+
+<http://paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/>
+
 ##拿到滚动条
 
 	window.scrollY
@@ -580,3 +682,347 @@ Iphone 4的一个 CSS 像素实际上表现为一块 2×2 的像素。所以图�
 ##关于ios系统中，webapp启动图片在不同设备上的适应性设置
 
 http://stackoverflow.com/questions/4687698/mulitple-apple-touch-startup-image-resolutions-for-ios-web-app-esp-for-ipad/10011893#10011893
+
+##关于ios系统中，中文输入法输入英文时，字母之间可能会出现一个六分之一空格(焦点科技葛亮)
+可以通过正则去掉 
+
+	this.value = this.value.replace(/\u2006/g, '');
+##关于android webview中，input元素输入时出现的怪异情况
+见图
+![怪异图](http://cdn.bielousov.com/wp-content/uploads/2012/08/android-input-label-text-issue.png)
+
+Android web视图,至少在HTC EVO和三星的Galaxy Nexus中，文本输入框在输入时表现的就像占位符。情况为一个类似水印的东西在用户输入区域，一旦用户开始输入便会消失(见图片)。
+在android的默认样式下当输入框获得焦点后,若存在一个绝对定位或者fixed的元素，布局会被破坏,其他元素与系统输入字段会发生重叠(如搜索图标将消失为搜索字段),可以观察到布局与原始输入字段有偏差(见截图)。
+这是一个相当复杂的问题，以下简单布局可以重现这个问题:
+
+	<label for="phone">Phone: *</label>
+	<input type="tel" name="phone" id="phone" minlength="10" maxlength="10" inputmode="latin digits" required="required" />
+	
+解决方法
+
+	-webkit-user-modify: read-write-plaintext-only
+	
+详细参考<http://www.bielousov.com/2012/android-label-text-appears-in-input-field-as-a-placeholder/>
+注意，该属性会导致中文不能输入词组，只能单个字。感谢鬼哥与飞（游勇飞）贡献此问题与解决方案
+
+另外，在position:fixed后的元素里，尽量不要使用输入框。更多的bug可参考
+<http://www.cosdiv.com/page/M0/S882/882353.html>
+=======
+依旧无法解决（摩托罗拉ME863手机），则使用input:text类型而非password类型，并设置其设置  -webkit-text-security: disc; 隐藏输入密码从而解决。
+
+
+##JS动态生成的select下拉菜单在Android2.x版本的默认浏览器里不起作用
+
+解决方法删除了overflow-x:hidden; 然后在JS生成下来菜单之后focus聚焦，这两步操作之后解决了问题。(来自岛都-小Qi)
+
+参考<http://stackoverflow.com/questions/4697908/html-select-control-disabled-in-android-webview-in-emulator>
+
+##andriod上去掉语音输入按钮
+
+
+	input::-webkit-input-speech-button {display: none}
+	
+
+##ios输入框最佳实践
+
+<http://stackoverflow.com/questions/11219242/mobile-friendly-input-of-a-digits-spaces-string-a-credit-card-number>
+
+<http://stackoverflow.com/questions/8216278/html5-input-type-number-vs-tel>
+
+<http://stackoverflow.com/questions/6178556/iphone-numeric-keyboard-for-text-input>
+
+<https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html>
+	
+<http://www.miketaylr.com/code/input-type-attr.html>
+
+
+##ios6跟iphone5的那些事
+
+
+ip5的媒体查询
+
+　　@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+
+　　/* iPhone 5 or iPod Touch 5th generation */
+
+　　}
+　　
+
+使用媒体查询，提供不同的启动图片：
+
+	<link href="startup-568h.png" rel="apple-touch-startup-image" media="(device-height: 568px)">
+	<link href="startup.png" rel="apple-touch-startup-image" sizes="640x920" media="(device-height: 480px)">
+　　
+拍照上传
+
+	<input type=file accept="video/*">
+	<input type=file accept="image/*">
+
+不支持其他类型的文件 ，如音频，Pages文档或PDF文件。 也没有getUserMedia摄像头的实时流媒体支持。
+
+　
+可以使用的html5高级api:
+multipart POST表单提交上传
+XMLHttpRequest 2 AJAX上传（甚至进度支持）
+文件API ，在iOS 6允许JavaScript直接读取的字节数和客户端操作文件。
+
+智能应用程序横幅
+
+有了智能应用程序横幅，当网站上有一个相关联的本机应用程序时，Safari浏览器可以显示一个横幅。 如果用户没有安装这个应用程序将显示“安装”按钮，或已经安装的显示“查看”按钮可打开它。
+
+在iTunes Link Maker搜索我们的应用程序和应用程序ID。
+
+	<meta name="apple-itunes-app" content="app-id=9999999">
+
+可以使用 app-argument 提供字符串值，如果参加iTunes联盟计划，可以添加元标记数据 
+
+	<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx">
+
+	<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx, affiliate-data=partnerId=99&siteID=XXXX">
+
+横幅需要156像素（设备是312 hi-dpi）在顶部，直到用户在下方点击内容或关闭按钮，你的网站才会展现全部的高度。 它就像HTML的DOM对象，但它不是一个真正的DOM。 
+
+CSS 3滤镜
+
+	-webkit-filter: blur(5px) grayscale (.5) opacity(0.66) hue-rotate(100deg);
+
+交叉淡变
+
+	background-image: -webkit-cross-fade(url("logo1.png"), url("logo2.png"), 50%);
+
+Safari中的全屏幕
+
+　　除了chrome-less 主屏幕meta标签，现在的iPhone和iPod Touch（而不是在iPad）支持全屏幕模式的窗口。 没有办法强制全屏模式，它需要由用户启动（工具栏上的最后一个图标）。需要引导用户按下屏幕上的全屏图标来激活全屏效果。 可以使用onresize事件检测是否用户切换到全屏幕。
+
+支持requestAnimationFrameAPI
+
+支持image-set,retina屏幕的利器
+
+	-webkit-image-set(url(low.png) 1x, url(hi.jpg) 2x)
+
+应用程序缓存限制增加至25MB。
+
+
+Web View（pseudobrowsers，PhoneGap/Cordova应用程序，嵌入式浏览器） 上Javascript运行比Safari慢3.3倍（或者说，Nitro引擎在Safari浏览器是Web应用程序是3.3倍速度）。
+
+autocomplete属性的输入遵循DOM规范
+
+来自DOM4的Mutation Observers已经实现。 您可以使用WebKitMutationObserver构造器捕获DOM的变化
+
+Safari不再总是对用 -webkit-transform:preserve-3d 的元素创建硬件加速
+
+支持window.selection 的Selection API
+
+Canvas更新 ：createImageData有一个参数，现在有两个新的功能做好准备，用webkitGetImageDataHD和webkitPutImageDataHD提供高分辨率图像 。
+
+更新SVG处理器和事件构造函数
+
+
+##IOS7的大更新
+
+<http://jinlong.github.io/blog/2013/09/23/safari-ios7-html5-problems-apis-review/#jtss-tsina>(张金龙翻译)
+
+[ios7的一些坑(英文)](http://www.sencha.com/blog/the-html5-scorecard-the-good-the-bad-and-the-ugly-in-ios7 "ios7的一些bug")
+
+
+
+##移动浏览器篇
+	
+【UC浏览器】video标签脱离文档流
+
+场景：<video>标签的父元素(祖辈元素)设置transform样式后，<video>标签会脱离文档流。
+
+测试环境：UC浏览器 8.7/8.6 + Android 2.3/4.0 。
+
+Demo：<http://t.cn/zj3xiyu>
+
+解决方案：不使用transform属性。translate用top、margin等属性替代。
+
+ 
+
+【UC浏览器】video标签总在最前
+
+场景：<video>标签总是在最前（可以理解为video标签的z-index属性是Max）。
+
+测试环境：UC浏览器 8.7/8.6 + Android 2.3/4.0 。
+
+ 
+
+【UC浏览器】position:fixed 属性在UC浏览器的奇葩现象
+
+场景：设置了position: fixed 的元素会遮挡z-index值更高的同辈元素。
+
+　　　在8.6的版本,这个情况直接出现。
+
+　　　在8.7之后的版本,当同辈元素的height大于713这个「神奇」的数值时,才会被遮挡。
+
+测试环境：UC浏览器 8.8_beta/8.7/8.6 + Android 2.3/4.0 。
+
+Demo：<http://t.cn/zYLTSg6>
+
+ 
+
+【QQ手机浏览器】不支持HttpOnly
+
+场景：带有HttpOnly属性的Cookie，在QQ手机浏览器版本从4.0开始失效。JavaScript可以直接读取设置了HttpOnly的Cookie值。
+
+测试环境：QQ手机浏览器 4.0/4.1/4.2 + Android 4.0 。
+
+ 
+
+【MIUI原生浏览器】浏览器地址栏hash不改变
+
+场景：location.hash 被赋值后，地址栏的地址不会改变。
+
+　　　但实际上 location.href 已经更新了，通过JavaScript可以顺利获取到更新后的地址。
+
+　　　虽然不影响正常访问，但用户无法将访问过程中改变hash后的地址存为书签。
+
+测试环境：MIUI 4.0
+
+ 
+
+【Chrome Mobile】fixed元素无法点击
+
+ 场景：父元素设置position: fixed;
+
+　　　子元素设置position: absolute;
+
+　　　此时，如果父元素/子元素还设置了overflow: hidden 则出现“父元素遮挡该子元素“的bug。
+
+　　　视觉(view)层并没有出现遮挡，只是无法触发绑定在该子元素上的事件。可理解为：「看到点不到」。
+
+补充： 页面往下滚动，触发position: fixed;的特性时，才会出现这个bug，在最顶不会出现。
+
+测试平台： 小米1S，Android4.0的Chrome18
+
+demo： <http://maplejan.sinaapp.com/demo/fixed_chromemobile.html>
+
+解决办法： 把父元素和子元素的overflow: hidden去掉。
+
+以上来源于  <http://www.cnblogs.com/maplejan/archive/2013/04/26/3045928.html>
+
+
+
+
+
+##库的使用实践
+
+#zepto.js
+
+ [zepto的一篇使用注意点讲解](http://chaoskeh.com/blog/some-experience-of-using-zepto.html "zepto")
+ 
+ [zepto的著名的tap“点透”bug](http://blog.youyo.name/archives/zepto-tap-click-through-research.html "zepto")
+ 
+ [zepto源码注释](http://www.cnblogs.com/sky000/archive/2013/03/29/2988952.html "zepto")
+ 
+#使用zeptojs内嵌到android webview影响正常滚动时
+<https://github.com/madrobby/zepto/blob/master/src/touch.js> 去掉61行,其实就是使用原生的滚动
+
+#iscroll4
+
+ iscroll4的几个bug(来自<http://www.mansonchor.com/blog/blog_detail_64.html>内有详细讲解)
+ 
+1.滚动容器点击input框、select等表单元素时没有响应】
+
+	onBeforeScrollStart: function (e) { e.preventDefault(); }
+
+改为
+
+	onBeforeScrollStart: function (e) { var nodeType = e.explicitOriginalTarget © e.explicitOriginalTarget.nodeName.toLowerCase():(e.target © e.target.nodeName.toLowerCase():'');if(nodeType !='select'&& nodeType !='option'&& nodeType !='input'&& nodeType!='textarea') e.preventDefault(); }
+
+2.往iscroll容器内添加内容时，容器闪动的bug
+
+
+源代码的
+
+	has3d = 'WebKitCSSMatrix' in window && 'm11' in new WebKitCSSMatrix()
+
+改成
+
+	has3d = false
+	
+在配置iscroll时，useTransition设置成false
+
+3.过长的滚动内容，导致卡顿和app直接闪退
+
+1)不要使用checkDOMChanges。虽然checkDOMChanges很方便，定时检测容器长度是否变化来refresh，但这也意味着你要消耗一个Interval的内存空间
+2)隐藏iscroll滚动条，配置时设置hScrollbar和vScrollbar为false。
+3)不得已的情况下，去掉各种效果，momentum、useTransform、useTransition都设置为false
+
+4.左右滚动时，不能正确响应正文上下拉动
+
+
+iscroll的闪动问题也与渲染有关系，可以参考
+ [运用webkit绘制渲染页面原理解决iscroll4闪动的问题](http://www.iunbug.com/archives/2012/09/19/411.html "iscroll4")
+
+
+
+
+##移动端字体问题(待补充)
+
+<http://zhuanlan.zhihu.com/zhezhexiong/19565895>
+
+<http://www.sencha.com/blog/resolution-independent-mobile-ui>
+
+<http://stackoverflow.com/questions/12058574/pixel-density-retina-display-and-font-size-in-css>
+
+<http://bjango.com/articles/min-device-pixel-ratio/>各种ratio
+
+
+##跨域问题
+
+手机浏览器也是浏览器，在ajax调用外部api的时候也存在跨域问题。当然利用phonegap打包后，由于协议不一样就不存在跨域问题了。
+但页面通常是需要跟后端进行调试的。一般会报类似
+
+	XMLHttpRequest cannot load XXX
+	Origin null is not allowed by Access-Control-Allow-Origin.
+
+以及
+
+	XMLHttpRequest cannot load http://. Request header field Content-Type is not allowed by Access-Control-Allow-Headers."
+
+
+
+这时候可以让后端加上两个http头
+
+	Access-Control-Allow-Origin "*"
+	Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+
+第一个头可以避免跨域问题，第二个头可以方便ajax请求设置content-type等配置项
+
+
+##phonegap部分
+
+#Should not happen: no rect-based-test nodes found 
+在android项目中的assets中的html页面中加入以下代码，便可解决问题
+
+	window,html,body{
+	    overflow-x:hidden !important;
+	    -webkit-overflow-scrolling: touch !important;
+	    overflow: scroll !important;
+	}
+	
+参考：
+
+<http://stackoverflow.com/questions/12090899/android-webview-jellybean-should-not-happen-no-rect-based-test-nodes-found>
+
+#拿联系人的时候报ContactFindOptions is not defined
+
+出现这个问题可能是因为navigator取contacts时绑定的window.onload
+
+注意使用phonegap的api时，一定要在devicereay事件的处理函数中使用api
+
+	document.addEventListener("deviceready", onDeviceReady, false);
+	
+	    function onDeviceReady() {    
+	        callFetchContacts();
+	    }
+	
+	function callFetchContacts(){
+	    var options = new ContactFindOptions();
+	    options.multiple = true;
+	    var fields       = ["displayName", "name","phoneNumbers"];
+	    navigator.contacts.find(fields, onSuccess, onError,options);  
+	    }
+
