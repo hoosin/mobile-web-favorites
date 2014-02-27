@@ -1,12 +1,12 @@
 mobile_web_favorites
 ==========
 
-A useful tools or tips list for mobile web application developing
+*A useful tools or tips list for mobile web application developing*
 
-这个项目收集移动端开发所需要的一些资源与小技巧
+这个Doc收集移动端开发的一些资源与小技巧
 
 
-一些非常重要的工具类网站
+**一些非常重要的工具类网站**
 
  [html5与css3技术应用评估](http://html5please.com/ "html5与css3技术应用评估")
  
