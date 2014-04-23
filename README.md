@@ -1,12 +1,14 @@
-mobile_web_favorites
+mobile web favorites
 ==========
 
 *A useful tools or tips list for mobile web application developing*
 
-这个文档收集移动端开发的一些资源与小技巧
+**这个文档收集移动端开发的一些资源与小技巧**
 
 
-**一些非常重要的工具类网站**
+##一些非常重要的工具类网站
+
+ [腾讯移动Web前端知识库](https://github.com/AlloyTeam/Mars)
 
  [html5与css3技术应用评估](http://html5please.com/ "html5与css3技术应用评估")
  
@@ -969,7 +971,30 @@ demo： <http://maplejan.sinaapp.com/demo/fixed_chromemobile.html>
 
 
 
+【微信浏览器】
 
+因为微信浏览器屏蔽了一部分链接图片，所以需要引导用户去打开新页面，可以用以下方式判断微信浏览器的ua
+
+```javascript
+function is_weixn(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+
+后端判断也很简单，比如php
+```php
+function is_weixin(){
+    if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) {
+            return true;
+    }  
+    return false;
+}
+```
 
 ##库的使用实践
 
