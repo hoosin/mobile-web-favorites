@@ -3,7 +3,7 @@ mobile_web_favorites
 
 *A useful tools or tips list for mobile web application developing*
 
-这个Doc收集移动端开发的一些资源与小技巧
+这个文档收集移动端开发的一些资源与小技巧
 
 
 **一些非常重要的工具类网站**
@@ -53,15 +53,27 @@ mobile_web_favorites
 ##响应式测试工具
 
  [resize添加到收藏夹后，可直接在浏览器中出现各种分辨率的选择工具来查看不同分辨率下的页面效果](http://lab.maltewassermann.com/viewport-resizer/ "resize")
+
+
  [http://beta.screenqueri.es/](http://beta.screenqueri.es/ "resize")
+
+
  [http://responsivepx.com](http://responsivepx.com "resize")
+
+
  [http://www.responsinator.com/](http://www.responsinator.com/ "resize")
+
+
  [http://resizemybrowser.com/](http://resizemybrowser.com/ "resize")
-  [https://quirktools.com/screenfly/](https://quirktools.com/screenfly/ "resize")
+
+
+ [https://quirktools.com/screenfly/](https://quirktools.com/screenfly/ "resize")
 
 一篇webapp开发的最佳实践与中文总结
 ==========
 <http://blog.forecast.io/its-not-a-web-app-its-an-app-you-install-from-the-web/>
+
+
 <http://lyric.im/best-practice-for-web-app-development/>
 
 
@@ -106,6 +118,8 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 注意根据[public_00](http://www.weibo.com/avajayam "ava")提供的资料补充，content使用分号作为分隔，在老的浏览器是支持的，但不是规范写法。
 规范的写法应该是使用逗号分隔，参考 
 <http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html>
+
+
 <http://developer.android.com/guide/webapps/targeting.html>
 
 
