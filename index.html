@@ -288,16 +288,16 @@ table tr:nth-child(2n) {
 img {
   max-width: 100%
 }
-
-     #fork{position:fixed;top:0;right:0;_position:absolute;}
-
+   #fork{position:fixed;top:0;right:0;_position:absolute;}
 </style>
 </head>
 <body>
-<h1>mobile<em> web</em> favorites</h1>
+<h1>mobile web favorites</h1>
 <p><em>A useful tools or tips list for mobile web application developing</em></p>
-<p>这个文档收集移动端开发的一些资源与小技巧</p>
-<p><strong>一些非常重要的工具类网站</strong></p>
+<p><strong>这个文档收集移动端开发的一些资源与小技巧</strong></p>
+<h2>相关资料</h2>
+<p><a href="https://github.com/AlloyTeam/Mars">腾讯移动Web前端知识库</a></p>
+<h2>一些非常重要的工具类网站</h2>
 <p><a href="http://html5please.com/" title="html5与css3技术应用评估">html5与css3技术应用评估</a></p>
 <p><a href="http://browserhacks.com/" title="各种奇妙的hack">各种奇妙的hack</a></p>
 <p><a href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density" title="几乎所有设备的屏幕尺寸与像素密度表">几乎所有设备的屏幕尺寸与像素密度表</a></p>
@@ -363,7 +363,7 @@ img {
 是根本没有这个功能。iphone 的safari 浏览器实际上从一开始就完整显示了这个网页，然后用viewport 查看其中的一部分。
 当你用手指拖动时，其实拖的不是页面，而是viewport。浏览器行为的改变不止是滚动条，交互事件也跟普通桌面不一样。
 (请参考：指尖的下JS 系列文章)</p>
-<h1>其中viewport相关的知识也可以参考我的文章</h1>
+<h1>其中viewport相关的知识也可以参考大漠的文章</h1>
 <p><a href="http://www.w3cplus.com/css/A-pixel-is-not-a-pixel-is-not-a-pixel.html" title="pixel">此像素非彼像素</a></p>
 <h2>点击与click事件</h2>
 <p>对于a标记的点击导航，默认是在onclick事件中处理的。而移动客户端对onclick的响应相比PC浏览器有着明显的几百毫秒延迟。</p>
@@ -1040,6 +1040,25 @@ myWebView.setWebChromeClient(new WebChromeClient(){
 <p>demo： <a href="http://maplejan.sinaapp.com/demo/fixed_chromemobile.html">http://maplejan.sinaapp.com/demo/fixed_chromemobile.html</a></p>
 <p>解决办法： 把父元素和子元素的overflow: hidden去掉。</p>
 <p>以上来源于  <a href="http://www.cnblogs.com/maplejan/archive/2013/04/26/3045928.html">http://www.cnblogs.com/maplejan/archive/2013/04/26/3045928.html</a></p>
+<p>【微信浏览器】</p>
+<p>因为微信浏览器屏蔽了一部分链接图片，所以需要引导用户去打开新页面，可以用以下方式判断微信浏览器的ua</p>
+<p><code>javascript
+function is_weixn(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;) {
+        return true;
+    } else {
+        return false;
+    }
+}</code></p>
+<p>后端判断也很简单，比如php
+<code>php
+function is_weixin(){
+    if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) {
+            return true;
+    }  
+    return false;
+}</code></p>
 <h2>库的使用实践</h2>
 <h1>zepto.js</h1>
 <p><a href="http://chaoskeh.com/blog/some-experience-of-using-zepto.html" title="zepto">zepto的一篇使用注意点讲解</a></p>
