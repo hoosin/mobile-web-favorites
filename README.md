@@ -1,8 +1,6 @@
 mobile web favorites
 ==========
 
-*A useful tools or tips list for mobile web application developing*
-
 **这个文档收集移动端开发的一些资源与小技巧**
 
 ##相关资料
