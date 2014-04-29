@@ -3,6 +3,8 @@ mobile web favorites
 
 **这个文档收集移动端开发的一些资源与小技巧**
 
+[贡献值名单：](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)
+
 ##相关资料
 
 [腾讯移动Web前端知识库](https://github.com/AlloyTeam/Mars)
