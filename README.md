@@ -1123,9 +1123,9 @@ iscroll的闪动问题也与渲染有关系，可以参考
 	    navigator.contacts.find(fields, onSuccess, onError,options);  
 	    }
 
-##调试篇
+#调试篇
 
-###手机抓包与配host
+##手机抓包与配host
 
 在PC上，我们可以很方便地配host，但是手机上如何配host，这是一个问题。
 
