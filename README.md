@@ -4,7 +4,7 @@ mobile web favorites
 **这个文档收集移动端开发的一些资源与小技巧**
 
 
-[本项目是基于](https://github.com/jtyjty99999/mobileTech)上完善，后期[贡献者名单](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)
+本项目是基于[mobileTech](https://github.com/jtyjty99999/mobileTech)上完善，后期[贡献者名单](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)
 
 ##相关资料
 
