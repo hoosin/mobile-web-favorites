@@ -120,14 +120,12 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
  
 
 第一个meta标签表示：强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览；
-~~尤其要注意的是content里多个属性的设置一定要用分号+空格来隔开，如果不规范将不会起作用。~~
+*尤其要注意的是content里多个属性的设置一定要用分号+空格来隔开，如果不规范将不会起作用。*
 
 注意根据[public_00](http://www.weibo.com/avajayam "ava")提供的资料补充，content使用分号作为分隔，在老的浏览器是支持的，但不是规范写法。
 规范的写法应该是使用逗号分隔，参考:
+[tip2](http://developer.android.com/guide/webapps/targeting.html) | [tip1](http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html)
 
-[tip1](http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html)
-
-[tip2](http://developer.android.com/guide/webapps/targeting.html)
 
 
 其中：
@@ -164,13 +162,13 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 使用click会出现绑定点击区域闪一下的情况，解决：给该元素一个样式如下
 
 ```css
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-tap-highlight-color: rgba(0,0,0,0);
 ```
 	
 如果不使用click，也不能简单的用touchstart或touchend替代，需要用touchstart的模拟一个click事件，并且不能发生touchmove事件，或者用zepto中的tap（轻击）事件。
 
 ```css
-	body{-webkit-overflow-scrolling: touch;}
+body{-webkit-overflow-scrolling: touch;}
 ```
 	
 用iphone或ipad浏览很长的网页滚动时的滑动效果很不错吧？不过如果是一个div，然后设置```height:200px;overflow:auto;```的话，可以滚动但是完全没有那滑动效果，很郁闷吧？
@@ -181,28 +179,28 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 ##页面描述
 
 ```html
-	<link rel="apple-touch-icon-precomposed" href="http://www.xxx.com/App_icon_114.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.xxx.com/App_icon_72.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.xxx.com/App_icon_114.png" />
+<link rel="apple-touch-icon-precomposed" href="http://www.xxx.com/App_icon_114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.xxx.com/App_icon_72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.xxx.com/App_icon_114.png" />
 ```
 	
 这个属性是当用户把连接保存到手机桌面时使用的图标，如果不设置，则会用网页的截图。有了这，就可以让你的网页像APP一样存在手机里了
 
 ```html
-	<link rel="apple-touch-startup-image" href="/img/startup.png" />
+<link rel="apple-touch-startup-image" href="/img/startup.png" />
 ```
 	
 这个是APP启动画面图片，用途和上面的类似，如果不设置，启动画面就是白屏，图片像素就是手机全屏的像素
 
 ```html
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 ```
 	
 这个描述是表示打开的web app的最上面的时间、信号栏是黑色的，当然也可以设置其它参数，详细参数说明在：[Supported Meta Tags](http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html  "css3渐变在线制作器")
 
 ```html
-	<meta name="apple-touch-fullscreen" content="yes" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
 ```
  
 
@@ -211,30 +209,30 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 下面还有个不错的css，是用来区分视网膜屏幕的，这样你可以在iphone这样的手机里载入2x的图片，就不会模糊了
 
 ```css
-	@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5),only screen and (min-resolution:200dpi)
-	{
-	#logo{background-image: url(logo@2x.png);}
-	}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5),only screen and (min-resolution:200dpi)
+{
+#logo{background-image: url(logo@2x.png);}
+}
 ```
  
 
 ##样式表:
 
 ```html
-	<link rel=”apple-touch-startup-image” href=”startup.png” /> // 设置开始页面图片
-	<link rel=”apple-touch-icon” href=”iphon_tetris_icon.png”/> // 在设置书签的时候可以显示好看的图标
-	<link rel="stylesheet" media="all and (orientation:portrait)" href="portrait.css">    // 肖像模式样式
-	<link rel="stylesheet" media="all and (orientation:landscape)"href="landscape.css"   // 风景模式样式
+<link rel=”apple-touch-startup-image” href=”startup.png” /> // 设置开始页面图片
+<link rel=”apple-touch-icon” href=”iphon_tetris_icon.png”/> // 在设置书签的时候可以显示好看的图标
+<link rel="stylesheet" media="all and (orientation:portrait)" href="portrait.css">    // 肖像模式样式
+<link rel="stylesheet" media="all and (orientation:landscape)"href="landscape.css"   // 风景模式样式
 
-	//竖屏时使用的样式
-	<style media="all and (orientation:portrait)" type="text/css">
-	#landscape { display: none; }
-	</style>
+//竖屏时使用的样式
+<style media="all and (orientation:portrait)" type="text/css">
+#landscape { display: none; }
+</style>
 
-	//横屏时使用的样式
-	<style media="all and (orientation:landscape)" type="text/css">
-	#portrait { display: none; }
-	</style>
+//横屏时使用的样式
+<style media="all and (orientation:landscape)" type="text/css">
+#portrait { display: none; }
+</style>
 ```
 
 ##手机浏览器常用手势动作监听封装(配合zepto,来自mansonchor)
@@ -281,91 +279,92 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 ##判断屏幕是否旋转
 
 ```js
-	function orientationChange() {
-		switch(window.orientation) {
-		　　case 0:
-				alert("肖像模式 0,screen-width: " + screen.width + "; screen-height:" + screen.height);
-				break;
-		　　case -90:
-				alert("左旋 -90,screen-width: " + screen.width + "; screen-height:" + screen.height);
-				break;
-		　　case 90:
-				alert("右旋 90,screen-width: " + screen.width + "; screen-height:" + screen.height);
-				break;
-		　　case 180:
-			　　alert("风景模式 180,screen-width: " + screen.width + "; screen-height:" + screen.height);
-			　　break;
-		};};
+function orientationChange() {
+	switch (window.orientation) {　　
+		case 0:
+			alert("肖像模式 0,screen-width: " + screen.width + "; screen-height:" + screen.height);
+			break;　　
+		case -90:
+			alert("左旋 -90,screen-width: " + screen.width + "; screen-height:" + screen.height);
+			break;　　
+		case 90:
+			alert("右旋 90,screen-width: " + screen.width + "; screen-height:" + screen.height);
+			break;　　
+		case 180:
+			　　alert("风景模式 180,screen-width: " + screen.width + "; screen-height:" + screen.height);　　
+			break;
+	};
+};
 ```
 
 ##添加事件监听
 
 ```js
-	addEventListener('load', function(){
-		orientationChange();
-		window.onorientationchange = orientationChange;
-	});
+addEventListener('load', function(){
+	orientationChange();
+	window.onorientationchange = orientationChange;
+});
 ```
  
 
 ##隐藏地址栏 & 处理事件的时候，防止滚动条出现：
 
 ```js
-	// 隐藏地址栏  & 处理事件的时候 ，防止滚动条出现
-	addEventListener('load', function(){
-			setTimeout(function(){ window.scrollTo(0, 1); }, 100);
-	});
+// 隐藏地址栏  & 处理事件的时候 ，防止滚动条出现
+addEventListener('load', function(){
+		setTimeout(function(){ window.scrollTo(0, 1); }, 100);
+});
 ```
 
 ##双手指滑动事件：
 
 ```js
-	// 双手指滑动事件
-	addEventListener('load',　　function(){ window.onmousewheel = twoFingerScroll;},
-		false // 兼容各浏览器，表示在冒泡阶段调用事件处理程序 (true 捕获阶段)
-	);
-	function twoFingerScroll(ev) {
-		var delta =ev.wheelDelta/120; //对 delta 值进行判断(比如正负) ，而后执行相应操作
-		return true;
-	};
+// 双手指滑动事件
+addEventListener('load',　　function(){ window.onmousewheel = twoFingerScroll;},
+	false // 兼容各浏览器，表示在冒泡阶段调用事件处理程序 (true 捕获阶段)
+);
+function twoFingerScroll(ev) {
+	var delta =ev.wheelDelta/120; //对 delta 值进行判断(比如正负) ，而后执行相应操作
+	return true;
+};
 ```
 
 ##判断是否为iPhone：
 
 ```js
-	// 判断是否为 iPhone ：
-	function isAppleMobile() {
-		return (navigator.platform.indexOf('iPad') != -1);
-	};
+// 判断是否为 iPhone ：
+function isAppleMobile() {
+	return (navigator.platform.indexOf('iPad') != -1);
+};
 ```
 
 ##localStorage:
 
 ```js
-	var v = localStorage.getItem('n') ? localStorage.getItem('n') : ""; // 如果名称是  n 的数据存在 ，则将其读出 ，赋予变量  v  。
-	localStorage.setItem('n', v); // 写入名称为 n、值为  v  的数据
-	localStorage.removeItem('n'); // 删除名称为  n  的数据
+var v = localStorage.getItem('n') ? localStorage.getItem('n') : ""; // 如果名称是  n 的数据存在 ，则将其读出 ，赋予变量  v  。
+localStorage.setItem('n', v); // 写入名称为 n、值为  v  的数据
+localStorage.removeItem('n'); // 删除名称为  n  的数据
 ```
 
 ##使用特殊链接：
 如果你关闭自动识别后 ，又希望某些电话号码能够链接到 iPhone 的拨号功能 ，那么可以通过这样来声明电话链接 ,
 
 ```html 
-	<a href="tel:12345654321">打电话给我</a>
-	<a href="sms:12345654321">发短信</a>
+<a href="tel:12345654321">打电话给我</a>
+<a href="sms:12345654321">发短信</a>
 ```
 
 或用于单元格：
 
-	```html 
-	<td onclick="location.href='tel:122'">
-	```
+```html 
+<td onclick="location.href='tel:122'">
+```
 ##自动大写与自动修正
 要关闭这两项功能，可以通过autocapitalize 与autocorrect 这两个选项：
 
-	```html 
-		<input type="text" autocapitalize="off" autocorrect="off" />
-	```
+```html 
+<input type="text" autocapitalize="off" autocorrect="off" />
+```
  
 ##WebKit CSS:
 ①“盒模型”的具体描述性质的包围盒块内容，包括边界，填充等等。
