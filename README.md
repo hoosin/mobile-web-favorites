@@ -111,10 +111,10 @@ Firefox 浏览器内置了 自定义设计视图 的功能，可以通过 Firefo
 meta标签，这些meta标签在开发webapp时起到非常重要的作用
 
 ```html
-	<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" name="viewport" />
-	<meta content="yes" name="apple-mobile-web-app-capable" />
-	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
-	<meta content="telephone=no" name="format-detection" />
+<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
 ```
 
  
@@ -124,7 +124,7 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 
 注意根据[public_00](http://www.weibo.com/avajayam "ava")提供的资料补充，content使用分号作为分隔，在老的浏览器是支持的，但不是规范写法。
 规范的写法应该是使用逗号分隔，参考:
-[tip2](http://developer.android.com/guide/webapps/targeting.html) | [tip1](http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html)
+[tip1](http://developer.android.com/guide/webapps/targeting.html) | [tip2](http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html)
 
 
 
@@ -320,7 +320,7 @@ addEventListener('load', function(){
 
 ```js
 // 双手指滑动事件
-addEventListener('load',　　function(){ window.onmousewheel = twoFingerScroll;},
+addEventListener('load',function(){ window.onmousewheel = twoFingerScroll;},
 	false // 兼容各浏览器，表示在冒泡阶段调用事件处理程序 (true 捕获阶段)
 );
 function twoFingerScroll(ev) {
@@ -357,7 +357,7 @@ localStorage.removeItem('n'); // 删除名称为  n  的数据
 或用于单元格：
 
 ```html 
-<td onclick="location.href='tel:122'">
+<td onclick="location.href='tel:122'"></td>
 ```
 ##自动大写与自动修正
 要关闭这两项功能，可以通过autocapitalize 与autocorrect 这两个选项：
@@ -370,159 +370,159 @@ localStorage.removeItem('n'); // 删除名称为  n  的数据
 ①“盒模型”的具体描述性质的包围盒块内容，包括边界，填充等等。
 
 ```
-	-webkit-border-bottom-left-radius: radius;
-	-webkit-border-top-left-radius: horizontal_radius vertical_radius;
-	-webkit-border-radius: radius;      //容器圆角
-	-webkit-box-sizing: sizing_model; 边框常量值：border-box/content-box
-	-webkit-box-shadow: hoff voff blur color; //容器阴影（参数分别为：水平X 方向偏移量；垂直Y 方向偏移量；高斯模糊半径值；阴影颜色值）
-	-webkit-margin-bottom-collapse: collapse_behavior; 常量值：collapse/discard/separate
-	-webkit-margin-start: width;
-	-webkit-padding-start: width;
-	-webkit-border-image: url(borderimg.gif) 25 25 25 25 round/stretch round/stretch;
-	-webkit-appearance: push-button;   //内置的CSS 表现，暂时只支持push-button
+-webkit-border-bottom-left-radius: radius;
+-webkit-border-top-left-radius: horizontal_radius vertical_radius;
+-webkit-border-radius: radius;      //容器圆角
+-webkit-box-sizing: sizing_model; 边框常量值：border-box/content-box
+-webkit-box-shadow: hoff voff blur color; //容器阴影（参数分别为：水平X 方向偏移量；垂直Y 方向偏移量；高斯模糊半径值；阴影颜色值）
+-webkit-margin-bottom-collapse: collapse_behavior; 常量值：collapse/discard/separate
+-webkit-margin-start: width;
+-webkit-padding-start: width;
+-webkit-border-image: url(borderimg.gif) 25 25 25 25 round/stretch round/stretch;
+-webkit-appearance: push-button;   //内置的CSS 表现，暂时只支持push-button
 ```
  
 
 ②“视觉格式化模型”描述性质，确定了位置和大小的块元素。
 
 ```
-	direction: rtl
-	unicode-bidi: bidi-override; 常量：bidi-override/embed/normal
+direction: rtl
+unicode-bidi: bidi-override; 常量：bidi-override/embed/normal
 ```
  
 
 ③“视觉效果”描述属性，调整的视觉效果块内容，包括溢出行为，调整行为，能见度，动画，变换，和过渡。
 
 ```
-	clip: rect(10px, 5px, 10px, 5px)
-	resize: auto; 常量：auto/both/horizontal/none/vertical
-	visibility: visible; 常量: collapse/hidden/visible
-	-webkit-transition: opacity 1s linear; 动画效果 ease/linear/ease-in/ease-out/ease-in-out
-	-webkit-backface-visibility: visibler; 常量：visible(默认值)/hidden
-	-webkit-box-reflect: right 1px; 镜向反转
-	-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom,
-	from(transparent), color-stop(0.5, transparent), to(white));
-	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));;   //CSS 遮罩/蒙板效果
-	-webkit-mask-attachment: fixed; 常量：fixed/scroll
-	-webkit-perspective: value; 常量：none(默认)
-	-webkit-perspective-origin: left top;
-	-webkit-transform: rotate(5deg);
-	-webkit-transform-style: preserve-3d; 常量：flat/preserve-3d; (2D 与3D)
+clip: rect(10px, 5px, 10px, 5px)
+resize: auto; 常量：auto/both/horizontal/none/vertical
+visibility: visible; 常量: collapse/hidden/visible
+-webkit-transition: opacity 1s linear; 动画效果 ease/linear/ease-in/ease-out/ease-in-out
+-webkit-backface-visibility: visibler; 常量：visible(默认值)/hidden
+-webkit-box-reflect: right 1px; 镜向反转
+-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom,
+from(transparent), color-stop(0.5, transparent), to(white));
+-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));;   //CSS 遮罩/蒙板效果
+-webkit-mask-attachment: fixed; 常量：fixed/scroll
+-webkit-perspective: value; 常量：none(默认)
+-webkit-perspective-origin: left top;
+-webkit-transform: rotate(5deg);
+-webkit-transform-style: preserve-3d; 常量：flat/preserve-3d; (2D 与3D)
 ```
  
 
 ④“生成的内容，自动编号，并列出”描述属性，允许您更改内容的一个组成部分，创建自动编号的章节和标题，和操纵的风格清单的内容。
 
 ```
-	content: “Item” counter(section) ” “;
-	This resets the counter.
-	First section
-	>two section
-	three section
-	counter-increment: section 1;
-	counter-reset: section;
+content: “Item” counter(section) ” “;
+This resets the counter.
+First section
+>two section
+three section
+counter-increment: section 1;
+counter-reset: section;
 ```
  
 
 ⑤“分页媒体”描述性能与外观的属性，控制印刷版本的网页，如分页符的行为。
 
 ```
-	page-break-after: auto; 常量：always/auto/avoid/left/right
-	page-break-before: auto; 常量：always/auto/avoid/left/right
-	page-break-inside: auto; 常量：auto/avoid
+page-break-after: auto; 常量：always/auto/avoid/left/right
+page-break-before: auto; 常量：always/auto/avoid/left/right
+page-break-inside: auto; 常量：auto/avoid
 ```
  
 
 ⑥“颜色和背景”描述属性控制背景下的块级元素和颜色的文本内容的组成部分。
 
 ```
-	-webkit-background-clip: content; 常量：border/content/padding/text
-	-webkit-background-origin: padding; 常量：border/content/padding/text
-	-webkit-background-size: 55px; 常量：length/length_x/length_y
+-webkit-background-clip: content; 常量：border/content/padding/text
+-webkit-background-origin: padding; 常量：border/content/padding/text
+-webkit-background-size: 55px; 常量：length/length_x/length_y
 ```
  
 
 ⑦ “字型”的具体描述性质的文字字体的选择范围内的一个因素。报告还描述属性用于下载字体定义。
 
 ```
-	unicode-range: U+00-FF, U+980-9FF;
+unicode-range: U+00-FF, U+980-9FF;
 ```
 
 ⑧“文本”描述属性的特定文字样式，间距和自动滚屏。
 
 ```
-	text-shadow: #00FFFC 10px 10px 5px;
-	text-transform: capitalize; 常量：capitalize/lowercase/none/uppercase
-	word-wrap: break-word; 常量：break-word/normal
-	-webkit-marquee: right large infinite normal 10s; 常量：direction(方向) increment(迭代次数) repetition(重复) style(样式) speed(速度);
-	-webkit-marquee-direction: ahead/auto/backwards/down/forwards/left/reverse/right/up
-	-webkit-marquee-incrementt: 1-n/infinite(无穷次)
-	-webkit-marquee-speed: fast/normal/slow
-	-webkit-marquee-style: alternate/none/scroll/slide
-	-webkit-text-fill-color: #ff6600; 常量：capitalize, lowercase, none, uppercase
-	-webkit-text-security: circle; 常量：circle/disc/none/square
-	-webkit-text-size-adjust: none; 常量:auto/none;
-	-webkit-text-stroke: 15px #fff;
-	-webkit-line-break: after-white-space; 常量：normal/after-white-space
-	-webkit-appearance: caps-lock-indicator;
-	-webkit-nbsp-mode: space; 常量： normal/space
-	-webkit-rtl-ordering: logical; 常量：visual/logical
-	-webkit-user-drag: element; 常量：element/auto/none
-	-webkit-user-modify: read- only; 常量：read-write-plaintext-only/read-write/read-only
-	-webkit-user-select: text; 常量：text/auto/none
+text-shadow: #00FFFC 10px 10px 5px;
+text-transform: capitalize; 常量：capitalize/lowercase/none/uppercase
+word-wrap: break-word; 常量：break-word/normal
+-webkit-marquee: right large infinite normal 10s; 常量：direction(方向) increment(迭代次数) repetition(重复) style(样式) speed(速度);
+-webkit-marquee-direction: ahead/auto/backwards/down/forwards/left/reverse/right/up
+-webkit-marquee-incrementt: 1-n/infinite(无穷次)
+-webkit-marquee-speed: fast/normal/slow
+-webkit-marquee-style: alternate/none/scroll/slide
+-webkit-text-fill-color: #ff6600; 常量：capitalize, lowercase, none, uppercase
+-webkit-text-security: circle; 常量：circle/disc/none/square
+-webkit-text-size-adjust: none; 常量:auto/none;
+-webkit-text-stroke: 15px #fff;
+-webkit-line-break: after-white-space; 常量：normal/after-white-space
+-webkit-appearance: caps-lock-indicator;
+-webkit-nbsp-mode: space; 常量： normal/space
+-webkit-rtl-ordering: logical; 常量：visual/logical
+-webkit-user-drag: element; 常量：element/auto/none
+-webkit-user-modify: read- only; 常量：read-write-plaintext-only/read-write/read-only
+-webkit-user-select: text; 常量：text/auto/none
 ```
  
 
 ⑨“表格”描述的布局和设计性能表的具体内容。
 
 ```
-	-webkit-border-horizontal-spacing: 2px;
-	-webkit-border-vertical-spacing: 2px;
-	-webkit-column-break-after: right; 常量：always/auto/avoid/left/right
-	-webkit-column-break-before: right; 常量：always/auto/avoid/left/right
-	–webkit-column-break-inside: logical; 常量：avoid/auto
-	-webkit-column-count: 3; //分栏
-	-webkit-column-rule: 1px solid #fff;
-	style:dashed,dotted,double,groove,hidden,inset,none,outset,ridge,solid
+-webkit-border-horizontal-spacing: 2px;
+-webkit-border-vertical-spacing: 2px;
+-webkit-column-break-after: right; 常量：always/auto/avoid/left/right
+-webkit-column-break-before: right; 常量：always/auto/avoid/left/right
+–webkit-column-break-inside: logical; 常量：avoid/auto
+-webkit-column-count: 3; //分栏
+-webkit-column-rule: 1px solid #fff;
+style:dashed,dotted,double,groove,hidden,inset,none,outset,ridge,solid
 ```
 
 ⑩“用户界面”描述属性，涉及到用户界面元素在浏览器中，如滚动文字区，滚动条，等等。报告还描述属性，范围以外的网页内容，如光标的标注样式和显示当您按住触摸触摸
 目标，如在iPhone上的链接。
 
 ```
-	-webkit-box-align: baseline,center,end,start,stretch 常量：baseline/center/end/start/stretch
-	-webkit-box-direction: normal;常量：normal/reverse
-	-webkit-box-flex: flex_valuet
-	-webkit-box-flex-group: group_number
-	-webkit-box-lines: multiple; 常量：multiple/single
-	-webkit-box-ordinal-group: group_number
-	-webkit-box-orient: block-axis; 常量：block-axis/horizontal/inline-axis/vertical/orientation
-	–webkit-box-pack: alignment; 常量：center/end/justify/start
+-webkit-box-align: baseline,center,end,start,stretch 常量：baseline/center/end/start/stretch
+-webkit-box-direction: normal;常量：normal/reverse
+-webkit-box-flex: flex_valuet
+-webkit-box-flex-group: group_number
+-webkit-box-lines: multiple; 常量：multiple/single
+-webkit-box-ordinal-group: group_number
+-webkit-box-orient: block-axis; 常量：block-axis/horizontal/inline-axis/vertical/orientation
+–webkit-box-pack: alignment; 常量：center/end/justify/start
 ```
 
 动画过渡
 这是 Webkit 中最具创新力的特性：使用过渡函数定义动画。
 
 ```
-	-webkit-animation: title infinite ease-in-out 3s;
-	animation 有这几个属性：
-	-webkit-animation-name： //属性名，就是我们定义的keyframes
-	-webkit-animation-duration：3s //持续时间
-	-webkit-animation-timing-function： //过渡类型：ease/ linear(线性) /ease-in(慢到快)/ease-out(快到慢) /ease-in-out(慢到快再到慢) /cubic-bezier
-	-webkit-animation-delay：10ms //动画延迟(默认0)
-	-webkit-animation-iteration-count： //循环次数(默认1)，infinite 为无限
-	-webkit-animation-direction： //动画方式：normal(默认 正向播放)； alternate(交替方向，第偶数次正向播放，第奇数次反向播放)
+-webkit-animation: title infinite ease-in-out 3s;
+animation 有这几个属性：
+-webkit-animation-name： //属性名，就是我们定义的keyframes
+-webkit-animation-duration：3s //持续时间
+-webkit-animation-timing-function： //过渡类型：ease/ linear(线性) /ease-in(慢到快)/ease-out(快到慢) /ease-in-out(慢到快再到慢) /cubic-bezier
+-webkit-animation-delay：10ms //动画延迟(默认0)
+-webkit-animation-iteration-count： //循环次数(默认1)，infinite 为无限
+-webkit-animation-direction： //动画方式：normal(默认 正向播放)； alternate(交替方向，第偶数次正向播放，第奇数次反向播放)
 ```
  
 
 这些同样是可以简写的。但真正让我觉的很爽的是keyframes，它能定义一个动画的转变过程供调用，过程为0%到100%或from(0%)到to(100%)。简单点说，只要你有想法，你想让元素在这个过程中以什么样的方式改变都是很简单的。
 
 ```
-	-webkit-transform: 类型（缩放scale/旋转rotate/倾斜skew/位移translate）
-	scale(num,num) 放大倍率。scaleX 和 scaleY(3)，可以简写为：scale(* , *)
-	rotate(*deg) 转动角度。rotateX 和 rotateY，可以简写为：rotate(* , *)
-	Skew(*deg) 倾斜角度。skewX 和skewY，可简写为：skew(* , *)
-	translate(*,*) 坐标移动。translateX 和translateY，可简写为：translate(* , *)。
+-webkit-transform: 类型（缩放scale/旋转rotate/倾斜skew/位移translate）
+scale(num,num) 放大倍率。scaleX 和 scaleY(3)，可以简写为：scale(* , *)
+rotate(*deg) 转动角度。rotateX 和 rotateY，可以简写为：rotate(* , *)
+Skew(*deg) 倾斜角度。skewX 和skewY，可简写为：skew(* , *)
+translate(*,*) 坐标移动。translateX 和translateY，可简写为：translate(* , *)。
 ```
  
  
@@ -531,15 +531,15 @@ localStorage.removeItem('n'); // 删除名称为  n  的数据
 media query相信大部分人已经使用过了。其实javascript可以配合media query这么用：
 
 ```js
-	var mql = window.matchMedia("(orientation: portrait)");
-	mql.addListener(handleOrientationChange);
-	handleOrientationChange(mql); 
-	function handleOrientationChange(mql) {
-	  if (mql.matches) {
-	    alert('The device is currently in portrait orientation ')
-	  } else {
-	    alert('The device is currently in landscape orientation')
-	  }}
+var mql = window.matchMedia("(orientation: portrait)");
+mql.addListener(handleOrientationChange);
+handleOrientationChange(mql); 
+function handleOrientationChange(mql) {
+  if (mql.matches) {
+    alert('The device is currently in portrait orientation ')
+  } else {
+    alert('The device is currently in landscape orientation')
+  }}
 ```
 
 我个人理解，是借助了media query接口做的事件监听，所以很强大！
@@ -547,14 +547,14 @@ media query相信大部分人已经使用过了。其实javascript可以配合me
 ##锁定 viewport
 
 ```js
-	ontouchmove="event.preventDefault()" //锁定viewport，任何屏幕操作不移动用户界面（弹出键盘除外）。
+ontouchmove="event.preventDefault()" //锁定viewport，任何屏幕操作不移动用户界面（弹出键盘除外）。
 ```
  
 
 ##被点击元素的外观变化，可以使用样式来设定：
 
 ```
-	-webkit-tap-highlight-color: 颜色
+-webkit-tap-highlight-color: 颜色
 ```
  
 
@@ -562,27 +562,27 @@ media query相信大部分人已经使用过了。其实javascript可以配合me
 开发特定设备的移动网站，首先要做的就是设备侦测了。下面是使用Javascript侦测iPhone/iPod的UA，然后转向到专属的URL。
 
 ```js
-	if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-	　　if (document.cookie.indexOf("iphone_redirect=false") == -1) {
-	　　　　window.location = "http://m.example.com";
-	　　}
-	}
+if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+　　if (document.cookie.indexOf("iphone_redirect=false") == -1) {
+　　　　window.location = "http://m.example.com";
+　　}
+}
 ```
  
 
 虽然Javascript是可以在水果设备上运行的，但是用户还是可以禁用。它也会造成客户端刷新和额外的数据传输，所以下面是服务器端侦测和转向：
 
 ```js
-	if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') || strstr($_SERVER['HTTP_USER_AGENT'],'iPod')) {
-	　　header('Location: http://yoursite.com/iphone');
-	　　exit();
-	}
+if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') || strstr($_SERVER['HTTP_USER_AGENT'],'iPod')) {
+　　header('Location: http://yoursite.com/iphone');
+　　exit();
+}
 ```
 
 ##阻止旋转屏幕时自动调整字体大小
 
 ```css
-	html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}
 ```
  
 
@@ -590,33 +590,33 @@ media query相信大部分人已经使用过了。其实javascript可以配合me
 如果不想设备侦测，可以用CSS媒体查询来专为iPhone/iPod定义样式。
 
 ```css
-	@media screen and (max-device-width: 480px) {}
+@media screen and (max-device-width: 480px) {}
 ```
 
 ##缩小图片
 网站的大图通常宽度都超过480像素，如果用前面的代码限制了缩放，这些图片在iPhone版显示显然会超过屏幕。好在iPhone机能还够，我们可以用CSS让iPhone自动将大图片缩小显示。
 
 ```css
-	@media screen and (max-device-width: 480px){
-	　　img{max-width:100%;height:auto;}
-	}
+@media screen and (max-device-width: 480px){
+　　img{max-width:100%;height:auto;}
+}
  ```
 
 ##模拟:hover伪类
 因为iPhone并没有鼠标指针，所以没有hover事件。那么CSS :hover伪类就没用了。但是iPhone有Touch事件，onTouchStart 类似 onMouseOver，onTouchEnd 类似 onMouseOut。所以我们可以用它来模拟hover。使用Javascript：
 
 ```js
-	var myLinks = document.getElementsByTagName('a');
-	for(var i = 0; i < myLinks.length; i++){
-	　　myLinks[i].addEventListener(’touchstart’, function(){this.className = “hover”;}, false);
-	　　myLinks[i].addEventListener(’touchend’, function(){this.className = “”;}, false);
-	}
+var myLinks = document.getElementsByTagName('a');
+for(var i = 0; i < myLinks.length; i++){
+　　myLinks[i].addEventListener(’touchstart’, function(){this.className = “hover”;}, false);
+　　myLinks[i].addEventListener(’touchend’, function(){this.className = “”;}, false);
+}
 ```
 
 然后用CSS增加hover效果：
 
 ```css
-	a:hover, a.hover { /* 你的hover效果 */ }
+a:hover, a.hover { /* 你的hover效果 */ }
 ```
 
 这样设计一个链接，感觉可以更像按钮。并且，这个模拟可以用在任何元素上。
@@ -643,7 +643,7 @@ media query相信大部分人已经使用过了。其实javascript可以配合me
 ##测试是否支持svg图片
 
 ```
-	document.implementation.hasFeature("http:// www.w3.org/TR/SVG11/feature#Image", "1.1")
+document.implementation.hasFeature("http:// www.w3.org/TR/SVG11/feature#Image", "1.1")
 ```
 	
 
@@ -658,17 +658,17 @@ media query相信大部分人已经使用过了。其实javascript可以配合me
 今天发现，要让a链接的Css active伪类生效，只需要给这个a链接的touch系列的任意事件touchstart/touchend绑定一个空的匿名方法即可hack成功
 
 ```html
-	<style>
+<style>
 	a {color: #000;}
 	a:active {color: #fff;}
-	</style>
-	<a herf=”asdasd”>asdasd</a>
-	<script>
+</style>
+<a herf=”asdasd”>asdasd</a>
+<script>
 	var a = document.getElementsByTagName(‘a’);
 	for (var i = 0; i < a.length; i++) {
 		a[i].addEventListener(‘touchstart’, function() {}, false);
 	}
-	</script>
+</script>
 ```
 
 ##消除transition闪屏
@@ -676,10 +676,10 @@ media query相信大部分人已经使用过了。其实javascript可以配合me
 两个方法
 
 ```css
-	-webkit-transform-style: preserve-3d;
-	/*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/
-	-webkit-backface-visibility:?hidden;
-	/*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/
+-webkit-transform-style: preserve-3d;
+/*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/
+-webkit-backface-visibility:?hidden;
+/*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/
 ```
 	
 ##消除ie10里面的那个叉号
@@ -709,8 +709,8 @@ click 事件普遍 300ms 的延迟
 使用css3动画的时尽量利用3D加速，从而使得动画变得流畅。动画过程中的动画闪白可以通过backface-visibility 隐藏。
 
 ```css
-	-webkit-transform-style: preserve-3d;
-	-webkit-backface-visibility: hidden;
+-webkit-transform-style: preserve-3d;
+-webkit-backface-visibility: hidden;
  ```
 
 ##常见的IPHONE 和 Android屏幕参数。
@@ -728,25 +728,25 @@ Iphone 4的一个 CSS 像素实际上表现为一块 2×2 的像素。所以图�
 1、页面引用
 
 ```html
-	<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio: 0.75)" href="ldpi.css" />
-	<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio: 1.0)" href="mdpi.css" />
-	<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio: 1.5)" href="hdpi.css" />
-	<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio: 2.0)" href="retina.css" />
+<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio: 0.75)" href="ldpi.css" />
+<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio: 1.0)" href="mdpi.css" />
+<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio: 1.5)" href="hdpi.css" />
+<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio: 2.0)" href="retina.css" />
 ```
  
 2、CSS文件里
 
 ```css
-	#header {
-		background:url(mdpi/bg.png);
-	}
+#header {
+	background:url(mdpi/bg.png);
+}
 
-	@media screen and (-webkit-device-pixel-ratio: 1.5) {
-		/*CSS for high-density screens*/
-		#header {
-			background:url(hdpi/bg.png);
-		}
+@media screen and (-webkit-device-pixel-ratio: 1.5) {
+	/*CSS for high-density screens*/
+	#header {
+		background:url(hdpi/bg.png);
 	}
+}
 ```
 
 ##ie10的特殊鼠标事件
@@ -756,19 +756,19 @@ Iphone 4的一个 CSS 像素实际上表现为一块 2×2 的像素。所以图�
 ##不让android识别邮箱
 
 ```html
-	<meta content="email=no" name="format-detection" />
+<meta content="email=no" name="format-detection" />
 ```
 	
 ##禁止ios弹出各种操作窗口
 
 ```css
-	-webkit-touch-callout:none
+-webkit-touch-callout:none
 ```
 
 ##禁止用户选中文字
 
 ```css
-	-webkit-user-select:none
+-webkit-user-select:none
 ```
 	
 ##动画效果中，使用translate比使用定位性能高
@@ -778,25 +778,25 @@ Iphone 4的一个 CSS 像素实际上表现为一块 2×2 的像素。所以图�
 ##拿到滚动条
 
 ```
-	window.scrollY
-	window.scrollX
+window.scrollY
+window.scrollX
 ```
  
  比如要绑定一个touchmove的事件，正常的情况下类似这样(来自呼吸二氧化碳)
  
  ```js
-	$('div').on('touchmove', function(){
-	//.….code
-	{});
+$('div').on('touchmove', function(){
+//.….code
+{});
 ```
 	
 而如果中间的code需要处理的东西多的话，fps就会下降影响程序顺滑度，而如果改成这样
 
 ```js
-	$('div').on('touchmove', function() {
-		setTimeout(function() {
-			//.….code
-		}, 0); {});
+$('div').on('touchmove', function() {
+	setTimeout(function() {
+		//.….code
+	}, 0); {});
 ```
 	
 把代码放在setTimeout中，会发现程序变快.
@@ -827,14 +827,14 @@ Android web视图,至少在HTC EVO和三星的Galaxy Nexus中，文本输入框�
 这是一个相当复杂的问题，以下简单布局可以重现这个问题:
 
 ```html
-	<label for="phone">Phone: *</label>
-	<input type="tel" name="phone" id="phone" minlength="10" maxlength="10" inputmode="latin digits" required="required" />
+<label for="phone">Phone: *</label>
+<input type="tel" name="phone" id="phone" minlength="10" maxlength="10" inputmode="latin digits" required="required" />
 ```
 	
 解决方法
 
 ```css
-	-webkit-user-modify: read-write-plaintext-only
+-webkit-user-modify: read-write-plaintext-only
 ```
 	
 详细参考[[Android]: Input Field Issues](http://www.bielousov.com/2012/android-label-text-appears-in-input-field-as-a-placeholder/)注意，该属性会导致中文不能输入词组，只能单个字。感谢鬼哥与飞（游勇飞）贡献此问题与解决方案
@@ -853,7 +853,7 @@ Android web视图,至少在HTC EVO和三星的Galaxy Nexus中，文本输入框�
 ##andriod上去掉语音输入按钮
 
 ```
-	input::-webkit-input-speech-button {display: none}
+input::-webkit-input-speech-button {display: none}
 ```
 	
 
@@ -876,26 +876,22 @@ Android web视图,至少在HTC EVO和三星的Galaxy Nexus中，文本输入框�
 ip5的媒体查询
 
 ```
-　　@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-
-　　/* iPhone 5 or iPod Touch 5th generation */
-
-　　}
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {/* iPhone 5 or iPod Touch 5th generation */}
 ```
 　　
 
 使用媒体查询，提供不同的启动图片：
 
 ```html
-	<link href="startup-568h.png" rel="apple-touch-startup-image" media="(device-height: 568px)">
-	<link href="startup.png" rel="apple-touch-startup-image" sizes="640x920" media="(device-height: 480px)">
+<link href="startup-568h.png" rel="apple-touch-startup-image" media="(device-height: 568px)">
+<link href="startup.png" rel="apple-touch-startup-image" sizes="640x920" media="(device-height: 480px)">
 ```
 　　
 拍照上传
 
 ```html
-	<input type=file accept="video/*">
-	<input type=file accept="image/*">
+<input type=file accept="video/*">
+<input type=file accept="image/*">
 ```
 
 不支持其他类型的文件 ，如音频，Pages文档或PDF文件。 也没有getUserMedia摄像头的实时流媒体支持。
@@ -913,14 +909,14 @@ XMLHttpRequest 2 AJAX上传（甚至进度支持）
 在iTunes Link Maker搜索我们的应用程序和应用程序ID。
 
 ```html
-	<meta name="apple-itunes-app" content="app-id=9999999">
+<meta name="apple-itunes-app" content="app-id=9999999">
 ```
 
 可以使用 app-argument 提供字符串值，如果参加iTunes联盟计划，可以添加元标记数据 
 
 ```html
-	<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx">
-	<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx, affiliate-data=partnerId=99&siteID=XXXX">
+<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx">
+<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx, affiliate-data=partnerId=99&siteID=XXXX">
 ```
 
 横幅需要156像素（设备是312 hi-dpi）在顶部，直到用户在下方点击内容或关闭按钮，你的网站才会展现全部的高度。 它就像HTML的DOM对象，但它不是一个真正的DOM。 
@@ -928,13 +924,13 @@ XMLHttpRequest 2 AJAX上传（甚至进度支持）
 CSS 3滤镜
 
 ```css
-	-webkit-filter: blur(5px) grayscale (.5) opacity(0.66) hue-rotate(100deg);
+-webkit-filter: blur(5px) grayscale (.5) opacity(0.66) hue-rotate(100deg);
 ```
 
 交叉淡变
 
 ```css
-	background-image: -webkit-cross-fade(url("logo1.png"), url("logo2.png"), 50%);
+background-image: -webkit-cross-fade(url("logo1.png"), url("logo2.png"), 50%);
 ```
 
 Safari中的全屏幕
@@ -946,7 +942,7 @@ Safari中的全屏幕
 支持image-set,retina屏幕的利器
 
 ```css
-	-webkit-image-set(url(low.png) 1x, url(hi.jpg) 2x)
+-webkit-image-set(url(low.png) 1x, url(hi.jpg) 2x)
 ```
 
 应用程序缓存限制增加至25MB。
@@ -982,32 +978,32 @@ Canvas更新 ：createImageData有一个参数，现在有两个新的功能做�
 #Cache开启和设置
 
 ```
-	browser.getSettings().setAppCacheEnabled(true);
-	browser.getSettings().setAppCachePath("/data/data/[com.packagename]/cache");
-	browser.getSettings().setAppCacheMaxSize(5*1024*1024); // 5MB
+browser.getSettings().setAppCacheEnabled(true);
+browser.getSettings().setAppCachePath("/data/data/[com.packagename]/cache");
+browser.getSettings().setAppCacheMaxSize(5*1024*1024); // 5MB
 ```
 
 #LocalStorage相关设置
 
 ```
-	browser.getSettings().setDatabaseEnabled(true);
-	browser.getSettings().setDomStorageEnabled(true);
-	String databasePath = browser.getContext().getDir("databases", Context.MODE_PRIVATE).getPath();
-	browser.getSettings().setDatabasePath(databasePath);//Android　webview的LocalStorage有个问题，关闭APP或者重启后，就清楚了，所以需要browser.getSettings().setDatabase相关的操作，把LocalStoarge存到DB中
+browser.getSettings().setDatabaseEnabled(true);
+browser.getSettings().setDomStorageEnabled(true);
+String databasePath = browser.getContext().getDir("databases", Context.MODE_PRIVATE).getPath();
+browser.getSettings().setDatabasePath(databasePath);//Android　webview的LocalStorage有个问题，关闭APP或者重启后，就清楚了，所以需要browser.getSettings().setDatabase相关的操作，把LocalStoarge存到DB中
  
-	myWebView.setWebChromeClient(new WebChromeClient(){
-	　　　 @Override
-	　　　 public void onExceededDatabaseQuota(String url, String databaseIdentifier, long currentQuota, long estimatedSize, long totalUsedQuota, WebStorage.QuotaUpdater quotaUpdater)
-	　　　 {
-	　　　　　　　 quotaUpdater.updateQuota(estimatedSize * 2);
-	　　　 }
-	}
+myWebView.setWebChromeClient(new WebChromeClient(){
+	　　　@Override
+	　　　public void onExceededDatabaseQuota(String url, String databaseIdentifier, long currentQuota, long estimatedSize, long totalUsedQuota, WebStorage.QuotaUpdater quotaUpdater)
+	　　 {
+	　　　　　　　quotaUpdater.updateQuota(estimatedSize * 2);
+	　　　}
+}
 ```
 
 ##浏览器自带缩放按钮取消显示
 
 ```
-	browser.getSettings().setBuiltInZoomControls(false);
+browser.getSettings().setBuiltInZoomControls(false);
 ```
 
 ##几个比较好的实践
@@ -1038,7 +1034,7 @@ Demo：<http://t.cn/zj3xiyu>
 
 【UC浏览器】video标签总在最前
 
-场景：<video>标签总是在最前（可以理解为video标签的z-index属性是Max）。
+场景：```<video>``` 标签总是在最前（可以理解为video标签的```z-index```属性是```Max```）。
 
 测试环境：UC浏览器 8.7/8.6 + Android 2.3/4.0 。
 
@@ -1130,15 +1126,15 @@ function is_weixin(){
 
 ###zepto.js
 
- [zepto的一篇使用注意点讲解](http://chaoskeh.com/blog/some-experience-of-using-zepto.html "zepto")
- 
- [zepto的著名的tap“点透”bug](http://blog.youyo.name/archives/zepto-tap-click-through-research.html "zepto")
- 
- [zepto源码注释](http://www.cnblogs.com/sky000/archive/2013/03/29/2988952.html "zepto")
+[zepto的一篇使用注意点讲解](http://chaoskeh.com/blog/some-experience-of-using-zepto.html "zepto")
+
+[zepto的著名的tap“点透”bug](http://blog.youyo.name/archives/zepto-tap-click-through-research.html "zepto")
+
+[zepto源码注释](http://www.cnblogs.com/sky000/archive/2013/03/29/2988952.html "zepto")
  
 ###使用zeptojs内嵌到android webview影响正常滚动时
 
-<https://github.com/madrobby/zepto/blob/master/src/touch.js> 去掉61行,其实就是使用原生的滚动
+```<https://github.com/madrobby/zepto/blob/master/src/touch.js>``` 去掉61行,其实就是使用原生的滚动
 
 ###iscroll4
 
@@ -1149,13 +1145,13 @@ function is_weixin(){
 1.滚动容器点击input框、select等表单元素时没有响应
 
 ```
-	onBeforeScrollStart: function (e) { e.preventDefault(); }
+onBeforeScrollStart: function (e) { e.preventDefault(); }
 ```
 
 改为
 
 ```
-	onBeforeScrollStart: function (e) { var nodeType = e.explicitOriginalTarget © e.explicitOriginalTarget.nodeName.toLowerCase():(e.target © e.target.nodeName.toLowerCase():'');if(nodeType !='select'&& nodeType !='option'&& nodeType !='input'&& nodeType!='textarea') e.preventDefault(); }
+onBeforeScrollStart: function (e) { var nodeType = e.explicitOriginalTarget © e.explicitOriginalTarget.nodeName.toLowerCase():(e.target © e.target.nodeName.toLowerCase():'');if(nodeType !='select'&& nodeType !='option'&& nodeType !='input'&& nodeType!='textarea') e.preventDefault(); }
 ```
 
 2.往iscroll容器内添加内容时，容器闪动的bug
@@ -1164,13 +1160,13 @@ function is_weixin(){
 源代码的
 
 ```
-	has3d = 'WebKitCSSMatrix' in window && 'm11' in new WebKitCSSMatrix()
+has3d = 'WebKitCSSMatrix' in window && 'm11' in new WebKitCSSMatrix()
 ```
 
 改成
 
 ```
-	has3d = false
+has3d = false
 ```
 	
 在配置iscroll时，useTransition设置成false
@@ -1211,22 +1207,22 @@ iscroll的闪动问题也与渲染有关系，可以参考
 但页面通常是需要跟后端进行调试的。一般会报类似
 
 ```
-	XMLHttpRequest cannot load XXX
-	Origin null is not allowed by Access-Control-Allow-Origin.
+XMLHttpRequest cannot load XXX
+Origin null is not allowed by Access-Control-Allow-Origin.
 ```
 
 以及
 
 ```
-	XMLHttpRequest cannot load http://. Request header field Content-Type is not allowed by Access-Control-Allow-Headers."
+XMLHttpRequest cannot load http://. Request header field Content-Type is not allowed by Access-Control-Allow-Headers."
 ```
 
 这时候可以让后端加上两个http头
 
 
 ```
-	Access-Control-Allow-Origin "*"
-	Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+Access-Control-Allow-Origin "*"
+Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
 ```
 
 第一个头可以避免跨域问题，第二个头可以方便ajax请求设置content-type等配置项
@@ -1239,11 +1235,11 @@ iscroll的闪动问题也与渲染有关系，可以参考
 在android项目中的assets中的html页面中加入以下代码，便可解决问题
 
 ```css
-	window,html,body{
-	    overflow-x:hidden !important;
-	    -webkit-overflow-scrolling: touch !important;
-	    overflow: scroll !important;
-	}
+window,html,body{
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overflow: scroll !important;
+}
 ```
 	
 参考：[Android WebView JellyBean -> Should not happen: no rect-based-test nodes found](http://stackoverflow.com/questions/12090899/android-webview-jellybean-should-not-happen-no-rect-based-test-nodes-found)
@@ -1257,18 +1253,16 @@ iscroll的闪动问题也与渲染有关系，可以参考
 注意使用phonegap的api时，一定要在devicereay事件的处理函数中使用api
 
 ```js
-	document.addEventListener("deviceready", onDeviceReady, false);
-	
-	    function onDeviceReady() {    
-	        callFetchContacts();
-	    }
-	
-	function callFetchContacts(){
-	    var options = new ContactFindOptions();
-	    options.multiple = true;
-	    var fields       = ["displayName", "name","phoneNumbers"];
-	    navigator.contacts.find(fields, onSuccess, onError,options);  
-	    }
+document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {    
+        callFetchContacts();
+    }
+function callFetchContacts(){
+    var options = new ContactFindOptions();
+    options.multiple = true;
+    var fields       = ["displayName", "name","phoneNumbers"];
+    navigator.contacts.find(fields, onSuccess, onError,options);  
+    }
 ```
 
 ##调试篇
