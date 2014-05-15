@@ -4,7 +4,7 @@ mobile web favorites
 **移动前端开发大杂烩**
 
 
-本项目是基于[mobileTech](https://github.com/jtyjty99999/mobileTech)上完善，感谢前期[贡献者](https://github.com/jtyjty99999/mobileTech/graphs/contributors)，后期[贡献者](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)名单
+本项目是基于 mobileTech 上完善，感谢前期[贡献者](https://github.com/jtyjty99999/mobileTech/graphs/contributors)，后期[贡献者](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)名单
 
 ##相关资料
 
