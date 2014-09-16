@@ -870,6 +870,10 @@ input::-webkit-input-speech-button {display: none}
 [HTML5 inputs and attribute support](http://www.miketaylr.com/code/input-type-attr.html)
 
 
+##iphone6的那些事
+
+[iPhone 6 屏幕揭秘](http://wileam.com/iphone-6-screen-cn/)
+
 ##ios6跟iphone5的那些事
 
 
