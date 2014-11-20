@@ -6,7 +6,7 @@ mobile web favorites
 
 本项目是基于 mobileTech 上完善，感谢前期[贡献者](https://github.com/jtyjty99999/mobileTech/graphs/contributors)，后期[贡献者](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)名单
 
-##相关资料
+##相关收藏
 
 [腾讯移动Web前端知识库](https://github.com/AlloyTeam/Mars)
 
