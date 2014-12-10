@@ -9,6 +9,7 @@ mobile web favorites
 ##相关收藏
 
 [腾讯移动Web前端知识库](https://github.com/AlloyTeam/Mars)
+[maxzhang博客](https://github.com/maxzhang/maxzhang.github.com/issues)
 
 
 ##一些非常重要的工具类网站
