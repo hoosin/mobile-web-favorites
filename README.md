@@ -99,7 +99,122 @@ Firefox 浏览器内置了 自定义设计视图 的功能，可以通过 Firefo
 
 [移动手机浏览器m3u8格式视频流播放支持程度测试](https://github.com/maxzhang/maxzhang.github.com/issues/19 "ava")
 
+##从`meta`开始
 
+本节之后可能也涉及 `meta` 标签，但为了更加全面的摸透 `meta` 特地用一节的篇幅来系统概述。
+
+###一、meta 标签分两大部分：HTTP 标题信息（http-equiv）和页面描述信息（name）。
+####1、http-equiv 属性的 Content-Type 值（显示字符集的设定）
+
+说明：设定页面使用的字符集，用以说明主页制作所使用的文字语言，浏览器会根据此来调用相应的字符集显示 page 内容。
+
+用法：
+
+```html
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+```
+
+注意：该 meta 标签定义了 HTML 页面所使用的字符集为 utf-8 ，就是万国码。它可以在同一页面显示中文简体、繁体及其它语言（如日文，韩文）等。
+
+####2、name 属性的 viewport 值（移动屏幕的缩放）
+
+也就是可视区域。对于桌面浏览器，我们都很清楚 viewport 是什么，就是除去了所有工具栏、状态栏、滚动条等等之后用于看网页的区域，这是真正有效的区域。由于移动设备屏幕宽度不同于传统 web，因此我们需要改变 viewport 值。
+
+实际上我们可以操作的属性有 4 个：
+
+>width – // viewport 的宽度 （范围从 200 到 10,000，默认为 980 像素）
+>height – // viewport 的高度 （范围从 223 到 10,000 ）
+>initial-scale – // 初始的缩放比例 （范围从 > 0 到 10）
+>minimum-scale – // 允许用户缩放到的最小比例
+>maximum-scale – // 允许用户缩放到的最大比例
+>user-scalable – // 用户是否可以手动缩放 (no，yes)
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+```
+
+说明：
+
+*强制让文档与设备的宽度保持 1:1 ；
+*文档最大的宽度比列是1.0（ initial-scale 初始刻度值和 maximum-scale 最大刻度值）；
+*user-scalable 定义用户是否可以手动缩放（ no 为不缩放），使页面固定设备上面的大小；
+
+注意：实际测试中发现，有些安卓系统自带的浏览器并不支持这一条规则，能够对页面进行放大，一旦放大响应的 box 也随之放大，导致页面出现错乱问题，解决方法：定义页面的最小宽度
+
+```css
+body {
+    min-width: 320px;
+}
+```
+
+####3、name 属性的 format-detection 值（忽略页面中的数字识别为电话号码）
+
+```html
+<meta name="format-detection" content="telephone=no" />
+```
+说明：
+
+*使设备浏览网页时对数字不启用电话功能（不同设备解释不同，iTouch 点击数字为存入联系人，iPhone 为拨打电话），忽略将页面中的数字识别为电话号码。
+
+*若需要启用电话功能将 telephone=yes 即可，若在页面上面有 Google Maps, iTunes 和 YouTube 的链接会在ios设备上打开相应的程序组件。
+
+####4、name 属性的 apple-mobile-web-app-capable 值（网站开启对 web app 程序的支持）
+
+```html
+<meta name="apple-mobile-web-app-capable" content="yes" />
+```
+
+说明：
+
+*网站开启对 web app 程序的支持。
+
+*该 meta 可以看出内容为“苹果设备 web 应用程序 xx”，就是说该 meta 是专门定义 web 应用的。
+
+####5、name 属性的 apple-mobile-web-app-status-bar-style 值（改变顶部状态条的颜色）
+
+```html
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+```
+说明：
+
+*在 web app 应用下状态条（屏幕顶部条）的颜色；
+*默认值为 default（白色），可以定为 black（黑色）和 black-translucent（灰色半透明）；
+
+注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px ）。
+
+####6、name 属性设置作者姓名及联系方式
+
+```html
+<meta name="author" contect="liudanyun, liudy1024@163.com" />
+```
+
+###二、苹果 Web App 其他设置：
+
+当然，配合 Web App 的 icon 和启动界面需要额外的两端代码进行设定，如下所示：
+
+```html
+<link rel="apple-touch-icon-precomposed" href="iphone_logo.png" />
+```
+
+说明：这个 link 就是设置 Web App 的放置主屏幕上 icon 文件路径。
+
+使用：
+
+*该路径需要注意的就是放到将网站的文档根目录下但不是服务器的文档的根目录。
+*图片尺寸可以设定为 57*57（px）或者 Retina 可以定为 114*114（px），iPad 尺寸为 72*72（px）
+```html
+<link rel="apple-touch-startup-image" href="logo_startup.png" />
+```
+
+说明：这个 link 就是设置启动时候的界面。
+
+使用：
+
+*放置的路径和上面一样。
+*官方规定启动界面的尺寸必须为 320*640（px），原本以为 Retina 屏幕可以支持双倍，但是不支持，图片显示不出来。
+*如果对 Web App 的这两个 meta 还有不能详细理解的可以查看官方解释：Meta Tags
+
+关于 link 方面还有更多的参数设置（例如：iPod、iPad、iPhone 不同尺寸不同图标），可以查看官方标准文档：[Configuring Web Applications](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html "Applications")
 
 ##本资料很多引用了指尖上的js系列，在此向作者表示感谢
 
