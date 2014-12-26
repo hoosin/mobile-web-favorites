@@ -123,10 +123,15 @@ Firefox 浏览器内置了 自定义设计视图 的功能，可以通过 Firefo
 实际上我们可以操作的属性有 4 个：
 
 >width – // viewport 的宽度 （范围从 200 到 10,000，默认为 980 像素）
+
 >height – // viewport 的高度 （范围从 223 到 10,000 ）
+
 >initial-scale – // 初始的缩放比例 （范围从 > 0 到 10）
+
 >minimum-scale – // 允许用户缩放到的最小比例
+
 >maximum-scale – // 允许用户缩放到的最大比例
+
 >user-scalable – // 用户是否可以手动缩放 (no，yes)
 
 ```html
@@ -135,9 +140,11 @@ Firefox 浏览器内置了 自定义设计视图 的功能，可以通过 Firefo
 
 说明：
 
-*强制让文档与设备的宽度保持 1:1 ；
-*文档最大的宽度比列是1.0（ initial-scale 初始刻度值和 maximum-scale 最大刻度值）；
-*user-scalable 定义用户是否可以手动缩放（ no 为不缩放），使页面固定设备上面的大小；
+* 强制让文档与设备的宽度保持 1:1 ；
+
+* 文档最大的宽度比列是1.0（ initial-scale 初始刻度值和 maximum-scale 最大刻度值）；
+
+* user-scalable 定义用户是否可以手动缩放（ no 为不缩放），使页面固定设备上面的大小；
 
 注意：实际测试中发现，有些安卓系统自带的浏览器并不支持这一条规则，能够对页面进行放大，一旦放大响应的 box 也随之放大，导致页面出现错乱问题，解决方法：定义页面的最小宽度
 
@@ -154,9 +161,9 @@ body {
 ```
 说明：
 
-*使设备浏览网页时对数字不启用电话功能（不同设备解释不同，iTouch 点击数字为存入联系人，iPhone 为拨打电话），忽略将页面中的数字识别为电话号码。
+* 使设备浏览网页时对数字不启用电话功能（不同设备解释不同，iTouch 点击数字为存入联系人，iPhone 为拨打电话），忽略将页面中的数字识别为电话号码。
 
-*若需要启用电话功能将 telephone=yes 即可，若在页面上面有 Google Maps, iTunes 和 YouTube 的链接会在ios设备上打开相应的程序组件。
+* 若需要启用电话功能将 telephone=yes 即可，若在页面上面有 Google Maps, iTunes 和 YouTube 的链接会在ios设备上打开相应的程序组件。
 
 ####4、name 属性的 apple-mobile-web-app-capable 值（网站开启对 web app 程序的支持）
 
@@ -166,9 +173,9 @@ body {
 
 说明：
 
-*网站开启对 web app 程序的支持。
+* 网站开启对 web app 程序的支持。
 
-*该 meta 可以看出内容为“苹果设备 web 应用程序 xx”，就是说该 meta 是专门定义 web 应用的。
+* 该 meta 可以看出内容为“苹果设备 web 应用程序 xx”，就是说该 meta 是专门定义 web 应用的。
 
 ####5、name 属性的 apple-mobile-web-app-status-bar-style 值（改变顶部状态条的颜色）
 
@@ -177,8 +184,8 @@ body {
 ```
 说明：
 
-*在 web app 应用下状态条（屏幕顶部条）的颜色；
-*默认值为 default（白色），可以定为 black（黑色）和 black-translucent（灰色半透明）；
+* 在 web app 应用下状态条（屏幕顶部条）的颜色；
+* 默认值为 default（白色），可以定为 black（黑色）和 black-translucent（灰色半透明）；
 
 注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px ）。
 
@@ -200,8 +207,10 @@ body {
 
 使用：
 
-*该路径需要注意的就是放到将网站的文档根目录下但不是服务器的文档的根目录。
-*图片尺寸可以设定为 57*57（px）或者 Retina 可以定为 114*114（px），iPad 尺寸为 72*72（px）
+* 该路径需要注意的就是放到将网站的文档根目录下但不是服务器的文档的根目录。
+
+* 图片尺寸可以设定为 57*57（px）或者 Retina 可以定为 114*114（px），iPad 尺寸为 72*72（px）
+
 ```html
 <link rel="apple-touch-startup-image" href="logo_startup.png" />
 ```
@@ -210,9 +219,11 @@ body {
 
 使用：
 
-*放置的路径和上面一样。
-*官方规定启动界面的尺寸必须为 320*640（px），原本以为 Retina 屏幕可以支持双倍，但是不支持，图片显示不出来。
-*如果对 Web App 的这两个 meta 还有不能详细理解的可以查看官方解释：Meta Tags
+* 放置的路径和上面一样。
+
+* 官方规定启动界面的尺寸必须为 320*640（px），原本以为 Retina 屏幕可以支持双倍，但是不支持，图片显示不出来。
+
+* 如果对 Web App 的这两个 meta 还有不能详细理解的可以查看官方解释：Meta Tags
 
 关于 link 方面还有更多的参数设置（例如：iPod、iPad、iPhone 不同尺寸不同图标），可以查看官方标准文档：[Configuring Web Applications](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html "Applications")
 
