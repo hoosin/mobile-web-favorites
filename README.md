@@ -1254,6 +1254,9 @@ function is_weixin(){
 }
 ```
 
+
+[实现微信浏览器内打开App Store链接](https://github.com/hoosin/mobile-web-favorites/issues/7)
+
 ##库的使用实践
 
 ###zepto.js
