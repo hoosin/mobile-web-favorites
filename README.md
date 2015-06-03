@@ -977,4 +977,447 @@ Android web视图,至少在HTC EVO和三星的Galaxy Nexus中，文本输入框�
 
 参考[HTML select control disabled in Android WebView (in emulator)](http://stackoverflow.com/questions/4697908/html-select-control-disabled-in-android-webview-in-emulator)
 
+##andriod上去掉语音输入按钮
 
+```
+input::-webkit-input-speech-button {display: none}
+```
+	
+
+##ios输入框最佳实践
+
+[Mobile-friendly input of a digits + spaces string (a credit card number)](http://stackoverflow.com/questions/11219242/mobile-friendly-input-of-a-digits-spaces-string-a-credit-card-number)
+
+[HTML5 input type number vs tel](http://stackoverflow.com/questions/8216278/html5-input-type-number-vs-tel)
+
+[iPhone: numeric keyboard for text input](http://stackoverflow.com/questions/6178556/iphone-numeric-keyboard-for-text-input)
+
+[Managing the Keyboard](https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html)	
+
+[HTML5 inputs and attribute support](http://www.miketaylr.com/code/input-type-attr.html)
+
+
+##iphone6的那些事
+
+[iPhone 6 屏幕揭秘](http://wileam.com/iphone-6-screen-cn/)
+
+##ios6跟iphone5的那些事
+
+
+ip5的媒体查询
+
+```
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {/* iPhone 5 or iPod Touch 5th generation */}
+```
+　　
+
+使用媒体查询，提供不同的启动图片：
+
+```html
+<link href="startup-568h.png" rel="apple-touch-startup-image" media="(device-height: 568px)">
+<link href="startup.png" rel="apple-touch-startup-image" sizes="640x920" media="(device-height: 480px)">
+```
+　　
+拍照上传
+
+```html
+<input type=file accept="video/*">
+<input type=file accept="image/*">
+```
+
+不支持其他类型的文件 ，如音频，Pages文档或PDF文件。 也没有getUserMedia摄像头的实时流媒体支持。
+
+　
+可以使用的html5高级api:
+multipart POST表单提交上传
+XMLHttpRequest 2 AJAX上传（甚至进度支持）
+文件API ，在iOS 6允许JavaScript直接读取的字节数和客户端操作文件。
+
+智能应用程序横幅
+
+有了智能应用程序横幅，当网站上有一个相关联的本机应用程序时，Safari浏览器可以显示一个横幅。 如果用户没有安装这个应用程序将显示“安装”按钮，或已经安装的显示“查看”按钮可打开它。
+
+在iTunes Link Maker搜索我们的应用程序和应用程序ID。
+
+```html
+<meta name="apple-itunes-app" content="app-id=9999999">
+```
+
+可以使用 app-argument 提供字符串值，如果参加iTunes联盟计划，可以添加元标记数据 
+
+```html
+<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx">
+<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx, affiliate-data=partnerId=99&siteID=XXXX">
+```
+
+横幅需要156像素（设备是312 hi-dpi）在顶部，直到用户在下方点击内容或关闭按钮，你的网站才会展现全部的高度。 它就像HTML的DOM对象，但它不是一个真正的DOM。 
+
+CSS 3滤镜
+
+```css
+-webkit-filter: blur(5px) grayscale (.5) opacity(0.66) hue-rotate(100deg);
+```
+
+交叉淡变
+
+```css
+background-image: -webkit-cross-fade(url("logo1.png"), url("logo2.png"), 50%);
+```
+
+Safari中的全屏幕
+
+　　除了chrome-less 主屏幕meta标签，现在的iPhone和iPod Touch（而不是在iPad）支持全屏幕模式的窗口。 没有办法强制全屏模式，它需要由用户启动（工具栏上的最后一个图标）。需要引导用户按下屏幕上的全屏图标来激活全屏效果。 可以使用onresize事件检测是否用户切换到全屏幕。
+
+支持requestAnimationFrameAPI
+
+支持image-set,retina屏幕的利器
+
+```css
+-webkit-image-set(url(low.png) 1x, url(hi.jpg) 2x)
+```
+
+应用程序缓存限制增加至25MB。
+
+
+Web View（pseudobrowsers，PhoneGap/Cordova应用程序，嵌入式浏览器） 上Javascript运行比Safari慢3.3倍（或者说，Nitro引擎在Safari浏览器是Web应用程序是3.3倍速度）。
+
+autocomplete属性的输入遵循DOM规范
+
+来自DOM4的Mutation Observers已经实现。 您可以使用WebKitMutationObserver构造器捕获DOM的变化
+
+Safari不再总是对用 -webkit-transform:preserve-3d 的元素创建硬件加速
+
+支持window.selection 的Selection API
+
+Canvas更新 ：createImageData有一个参数，现在有两个新的功能做好准备，用webkitGetImageDataHD和webkitPutImageDataHD提供高分辨率图像 。
+
+更新SVG处理器和事件构造函数
+
+
+##IOS7的大更新
+
+[iOS 7 的 Safari 和 HTML5：问题，变化和新 API](http://jinlong.github.io/blog/2013/09/23/safari-ios7-html5-problems-apis-review/#jtss-tsina)
+
+[ios7的一些坑(英文)](http://www.sencha.com/blog/the-html5-scorecard-the-good-the-bad-and-the-ugly-in-ios7 "ios7的一些bug")
+
+[ios7的一些坑2(英文)](http://www.mobilexweb.com/blog/safari-ios7-html5-problems-apis-review "ios7的一些bug")
+
+
+
+##webview相关
+
+#Cache开启和设置
+
+```
+browser.getSettings().setAppCacheEnabled(true);
+browser.getSettings().setAppCachePath("/data/data/[com.packagename]/cache");
+browser.getSettings().setAppCacheMaxSize(5*1024*1024); // 5MB
+```
+
+#LocalStorage相关设置
+
+```
+browser.getSettings().setDatabaseEnabled(true);
+browser.getSettings().setDomStorageEnabled(true);
+String databasePath = browser.getContext().getDir("databases", Context.MODE_PRIVATE).getPath();
+browser.getSettings().setDatabasePath(databasePath);//Android　webview的LocalStorage有个问题，关闭APP或者重启后，就清楚了，所以需要browser.getSettings().setDatabase相关的操作，把LocalStoarge存到DB中
+ 
+myWebView.setWebChromeClient(new WebChromeClient(){
+	　　　@Override
+	　　　public void onExceededDatabaseQuota(String url, String databaseIdentifier, long currentQuota, long estimatedSize, long totalUsedQuota, WebStorage.QuotaUpdater quotaUpdater)
+	　　 {
+	　　　　　　　quotaUpdater.updateQuota(estimatedSize * 2);
+	　　　}
+}
+```
+
+##浏览器自带缩放按钮取消显示
+
+```
+browser.getSettings().setBuiltInZoomControls(false);
+```
+
+##几个比较好的实践
+
+使用localstorage缓存html
+
+使用lazyload，还要记得lazyload占位图虽然小，但是最好能提前加载到缓存
+
+延时加载执行js
+
+主要原因就在于Android Webview的onPageFinished事件，Android端一般是用这个事件来标识页面加载完成并显示的，也就是说在此之前，会一直loading，但是Android的OnPageFinished事件会在Javascript脚本执行完成之后才会触发。如果在页面中使用JQuery，会在处理完DOM对象，执行完$(document).ready(function() {});事件自会后才会渲染并显示页面。
+
+
+
+##移动浏览器篇
+	
+【UC浏览器】video标签脱离文档流
+
+场景：<video>标签的父元素(祖辈元素)设置transform样式后，<video>标签会脱离文档流。
+
+测试环境：UC浏览器 8.7/8.6 + Android 2.3/4.0 。
+
+Demo：<http://t.cn/zj3xiyu>
+
+解决方案：不使用transform属性。translate用top、margin等属性替代。
+
+ 
+
+【UC浏览器】video标签总在最前
+
+场景：```<video>``` 标签总是在最前（可以理解为video标签的```z-index```属性是```Max```）。
+
+测试环境：UC浏览器 8.7/8.6 + Android 2.3/4.0 。
+
+ 
+
+【UC浏览器】position:fixed 属性在UC浏览器的奇葩现象
+
+场景：设置了position: fixed 的元素会遮挡z-index值更高的同辈元素。
+
+　　　在8.6的版本,这个情况直接出现。
+
+　　　在8.7之后的版本,当同辈元素的height大于713这个「神奇」的数值时,才会被遮挡。
+
+测试环境：UC浏览器 8.8_beta/8.7/8.6 + Android 2.3/4.0 。
+
+Demo：<http://t.cn/zYLTSg6>
+
+ 
+
+【QQ手机浏览器】不支持HttpOnly
+
+场景：带有HttpOnly属性的Cookie，在QQ手机浏览器版本从4.0开始失效。JavaScript可以直接读取设置了HttpOnly的Cookie值。
+
+测试环境：QQ手机浏览器 4.0/4.1/4.2 + Android 4.0 。
+
+ 
+
+【MIUI原生浏览器】浏览器地址栏hash不改变
+
+场景：location.hash 被赋值后，地址栏的地址不会改变。
+
+　　　但实际上 location.href 已经更新了，通过JavaScript可以顺利获取到更新后的地址。
+
+　　　虽然不影响正常访问，但用户无法将访问过程中改变hash后的地址存为书签。
+
+测试环境：MIUI 4.0
+
+ 
+
+【Chrome Mobile】fixed元素无法点击
+
+ 场景：父元素设置position: fixed;
+
+　　　子元素设置position: absolute;
+
+　　　此时，如果父元素/子元素还设置了overflow: hidden 则出现“父元素遮挡该子元素“的bug。
+
+　　　视觉(view)层并没有出现遮挡，只是无法触发绑定在该子元素上的事件。可理解为：「看到点不到」。
+
+补充： 页面往下滚动，触发position: fixed;的特性时，才会出现这个bug，在最顶不会出现。
+
+测试平台： 小米1S，Android4.0的Chrome18
+
+demo： <http://maplejan.sinaapp.com/demo/fixed_chromemobile.html>
+
+解决办法： 把父元素和子元素的overflow: hidden去掉。
+
+以上来源于  <http://www.cnblogs.com/maplejan/archive/2013/04/26/3045928.html>
+
+
+
+【微信浏览器】
+
+因为微信浏览器屏蔽了一部分链接图片，所以需要引导用户去打开新页面，可以用以下方式判断微信浏览器的ua
+
+```javascript
+function is_weixn(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+```
+
+后端判断也很简单，比如php
+
+```php
+function is_weixin(){
+    if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) {
+            return true;
+    }  
+    return false;
+}
+```
+
+
+[实现微信浏览器内打开App Store链接](https://github.com/hoosin/mobile-web-favorites/issues/7)
+
+##库的使用实践
+
+###zepto.js
+
+[zepto的一篇使用注意点讲解](http://chaoskeh.com/blog/some-experience-of-using-zepto.html "zepto")
+
+[zepto的著名的tap“点透”bug](http://blog.youyo.name/archives/zepto-tap-click-through-research.html "zepto")
+
+[zepto源码注释](http://www.cnblogs.com/sky000/archive/2013/03/29/2988952.html "zepto")
+ 
+###使用zeptojs内嵌到android webview影响正常滚动时
+
+```<https://github.com/madrobby/zepto/blob/master/src/touch.js>``` 去掉61行,其实就是使用原生的滚动
+
+###iscroll4
+
+```
+ iscroll4的几个bug(来自<http://www.mansonchor.com/blog/blog_detail_64.html>内有详细讲解)
+ ```
+ 
+1.滚动容器点击input框、select等表单元素时没有响应
+
+```
+onBeforeScrollStart: function (e) { e.preventDefault(); }
+```
+
+改为
+
+```
+onBeforeScrollStart: function (e) { var nodeType = e.explicitOriginalTarget © e.explicitOriginalTarget.nodeName.toLowerCase():(e.target © e.target.nodeName.toLowerCase():'');if(nodeType !='select'&& nodeType !='option'&& nodeType !='input'&& nodeType!='textarea') e.preventDefault(); }
+```
+
+2.往iscroll容器内添加内容时，容器闪动的bug
+
+
+源代码的
+
+```
+has3d = 'WebKitCSSMatrix' in window && 'm11' in new WebKitCSSMatrix()
+```
+
+改成
+
+```
+has3d = false
+```
+	
+在配置iscroll时，useTransition设置成false
+
+3.过长的滚动内容，导致卡顿和app直接闪退
+
+1). 不要使用checkDOMChanges。虽然checkDOMChanges很方便，定时检测容器长度是否变化来refresh，但这也意味着你要消耗一个Interval的内存空间
+
+2). 隐藏iscroll滚动条，配置时设置hScrollbar和vScrollbar为false。
+
+3). 不得已的情况下，去掉各种效果，momentum、useTransform、useTransition都设置为false
+
+4.左右滚动时，不能正确响应正文上下拉动
+
+
+iscroll的闪动问题也与渲染有关系，可以参考
+
+[运用webkit绘制渲染页面原理解决iscroll4闪动的问题](http://www.iunbug.com/archives/2012/09/19/411.html "iscroll4")
+
+[iscroll4升级到5要注意的问题](http://blog.csdn.net/gcz564539969/article/details/9156141 "iscroll5")
+
+
+
+##移动端字体问题(待补充)
+
+[dp、sp、px傻傻分不清楚](http://zhuanlan.zhihu.com/zhezhexiong/19565895)
+
+[Resolution Independent Mobile UI](http://www.sencha.com/blog/resolution-independent-mobile-ui)
+
+[Pixel density, retina display and font-size in CSS](http://stackoverflow.com/questions/12058574/pixel-density-retina-display-and-font-size-in-css)
+
+[各种ratio](http://bjango.com/articles/min-device-pixel-ratio/)
+
+
+##跨域问题
+
+手机浏览器也是浏览器，在ajax调用外部api的时候也存在跨域问题。当然利用phonegap打包后，由于协议不一样就不存在跨域问题了。
+但页面通常是需要跟后端进行调试的。一般会报类似
+
+```
+XMLHttpRequest cannot load XXX
+Origin null is not allowed by Access-Control-Allow-Origin.
+```
+
+以及
+
+```
+XMLHttpRequest cannot load http://. Request header field Content-Type is not allowed by Access-Control-Allow-Headers."
+```
+
+这时候可以让后端加上两个http头
+
+
+```
+Access-Control-Allow-Origin "*"
+Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+```
+
+第一个头可以避免跨域问题，第二个头可以方便ajax请求设置content-type等配置项
+
+
+##phonegap部分
+
+*Should not happen: no rect-based-test nodes found*
+
+在android项目中的assets中的html页面中加入以下代码，便可解决问题
+
+```css
+window,html,body{
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overflow: scroll !important;
+}
+```
+	
+参考：[Android WebView JellyBean -> Should not happen: no rect-based-test nodes found](http://stackoverflow.com/questions/12090899/android-webview-jellybean-should-not-happen-no-rect-based-test-nodes-found)
+
+ 
+
+##拿联系人的时候报ContactFindOptions is not defined
+
+出现这个问题可能是因为navigator取contacts时绑定的window.onload
+
+注意使用phonegap的api时，一定要在devicereay事件的处理函数中使用api
+
+```js
+document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {    
+        callFetchContacts();
+    }
+function callFetchContacts(){
+    var options = new ContactFindOptions();
+    options.multiple = true;
+    var fields       = ["displayName", "name","phoneNumbers"];
+    navigator.contacts.find(fields, onSuccess, onError,options);  
+    }
+```
+
+
+##调试篇
+
+###手机抓包与配host
+
+在PC上，我们可以很方便地配host，但是手机上如何配host，这是一个问题。
+
+这里主要使用fiddler和远程代理，实现手机配host的操作，具体操作如下：
+
+首先，保证PC和移动设备在同一个局域网下；
+
+PC上开启fiddler，并在设置中勾选“allow remote computers to connect”
+
+1. 首先，保证PC和移动设备在同一个局域网下；
+
+2. PC上开启fiddler，并在设置中勾选“allow remote computers to connect”
+
+![fiddler](img/01.png)
+
+3. 手机上设置代理，代理IP为PC的IP地址，端口为8888（这是fiddler的默认端口）。通常手机上可以直接设置代理，如果没有，可以去下载一个叫ProxyDroid的APP来实现代理的设置。
+
+4. 此时你会发现，用手机上网，走的其实是PC上的fiddler，所有的请求包都会在fiddler中列出来，配合willow使用，即可实现配host，甚至是反向代理的操作。
