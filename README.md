@@ -1,8 +1,7 @@
 Mobile Web Favorites
 ==========
 
-**移动前端开发收藏夹，欢迎 pull request**
-
+移动前端开发收藏夹，欢迎使用 [Issues](https://github.com/hoosin/mobile-web-favorites/issues/new) 以及 Pull Request
 
 贡献者名单：[https://github.com/hoosin/mobile-web-favorites/graphs/contributors](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)
 
