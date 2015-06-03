@@ -1,12 +1,12 @@
-mobile web favorites
+Mobile Web Favorites
 ==========
 
-**移动前端开发大杂烩，欢迎 pull request**
+**移动前端开发收藏夹，欢迎 pull request**
 
 
-本项目是基于 mobileTech 上完善，感谢前期[贡献者](https://github.com/jtyjty99999/mobileTech/graphs/contributors)，后期[贡献者](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)名单
+贡献者名单：[https://github.com/hoosin/mobile-web-favorites/graphs/contributors](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)
 
-##相关收藏
+##同类项目
 
 [腾讯移动Web前端知识库](https://github.com/AlloyTeam/Mars)
 
@@ -14,7 +14,6 @@ mobile web favorites
 
 
 ##一些非常重要的工具类网站
-
 
 [html5与css3技术应用评估](http://html5please.com/ "html5与css3技术应用评估")
 
