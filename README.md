@@ -975,7 +975,7 @@ Android web视图,至少在HTC EVO和三星的Galaxy Nexus中，文本输入框�
 
 解决方法删除了```overflow-x:hidden```; 然后在JS生成下来菜单之后focus聚焦，这两步操作之后解决了问题。(来自岛都-小Qi)
 
-参考[HTML <select> control disabled in Android WebView (in emulator)](http://stackoverflow.com/questions/4697908/html-select-control-disabled-in-android-webview-in-emulator)
+参考[HTML select control disabled in Android WebView (in emulator)](http://stackoverflow.com/questions/4697908/html-select-control-disabled-in-android-webview-in-emulator)
 
 ##andriod上去掉语音输入按钮
 
