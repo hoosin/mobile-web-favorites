@@ -46,7 +46,7 @@ Mobile Web Favorites
 
 [各种各样的媒体查询收集](http://nmsdvid.com/snippets/ "各种各样的媒体查询收集")
 
-[css3动画在线制作器](http://ecd.tencent.com/css3/tools.html "css3动画在线制作器")
+[css3动画在线制作器](http://isux.tencent.com/css3/ "css3动画在线制作器")
 
 [css3渐变在线制作器](http://www.colorzilla.com/gradient-editor/ "css3渐变在线制作器")
  
