@@ -12,6 +12,8 @@ Mobile Web Favorites
 
 [maxzhang博客](https://github.com/maxzhang/maxzhang.github.com/issues)
 
+##issues
+[QQ浏览器X5内核问题汇总](https://github.com/hoosin/mobile-web-favorites/issues/11)
 
 ##一些非常重要的工具类网站
 
