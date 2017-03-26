@@ -1,6 +1,6 @@
 Mobile Web Favorites
 ==========
-##参与贡献
+## 参与贡献
 
 移动前端开发收藏夹，欢迎使用 [Issues](https://github.com/hoosin/mobile-web-favorites/issues/new) 以及 Pull Request
 
