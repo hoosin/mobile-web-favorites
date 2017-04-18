@@ -6,16 +6,16 @@ Mobile Web Favorites
 
 贡献者名单：[https://github.com/hoosin/mobile-web-favorites/graphs/contributors](https://github.com/hoosin/mobile-web-favorites/graphs/contributors)
 
-##同类项目
+## 同类项目
 
 [腾讯移动Web前端知识库](https://github.com/AlloyTeam/Mars)
 
 [maxzhang博客](https://github.com/maxzhang/maxzhang.github.com/issues)
 
-##issues
+## issues
 [QQ浏览器X5内核问题汇总](https://github.com/hoosin/mobile-web-favorites/issues/11)
 
-##一些非常重要的工具类网站
+## 一些非常重要的工具类网站
 
 [html5与css3技术应用评估](http://html5please.com/ "html5与css3技术应用评估")
 
@@ -59,7 +59,7 @@ Mobile Web Favorites
 [webkit独有的样式分析](http://ued.ctrip.com/blog/wp-content/webkitcss/ "webkit独有的样式分析")
 
 
-##响应式测试工具
+## 响应式测试工具
 
 Firefox 浏览器内置了 自定义设计视图 的功能，可以通过 Firefox->Web 开发者->自定义设计视图（或者摁下 ```Shift + Ctrl + m``` ）。相比网络工具，运行更加流畅，无需联网。
 
@@ -77,14 +77,14 @@ Firefox 浏览器内置了 自定义设计视图 的功能，可以通过 Firefo
 
 [quirktools](https://quirktools.com/screenfly/ "resize")
 
-##一篇webapp开发的最佳实践与中文总结
+## 一篇webapp开发的最佳实践与中文总结
 
 [原文](http://blog.forecast.io/its-not-a-web-app-its-an-app-you-install-from-the-web/)
 
 [当前 WEB APP 开发的最佳实践](http://lyric.im/best-practice-for-web-app-development)
 
 
-##来自[maxzhang](https://github.com/maxzhang "ava")的一些移动端经验总结干货
+## 来自[maxzhang](https://github.com/maxzhang "ava")的一些移动端经验总结干货
 
 [移动Web单页应用开发实践——页面结构化](https://github.com/maxzhang/maxzhang.github.com/issues/8 "ava")
 
@@ -100,12 +100,12 @@ Firefox 浏览器内置了 自定义设计视图 的功能，可以通过 Firefo
 
 [移动手机浏览器m3u8格式视频流播放支持程度测试](https://github.com/maxzhang/maxzhang.github.com/issues/19 "ava")
 
-##从`meta`开始
+## 从`meta`开始
 
 本节之后可能也涉及 `meta` 标签，但为了更加全面的摸透 `meta` 特地用一节的篇幅来系统概述。
 
-###一、meta 标签分两大部分：HTTP 标题信息（http-equiv）和页面描述信息（name）。
-####1、http-equiv 属性的 Content-Type 值（显示字符集的设定）
+### 一、meta 标签分两大部分：HTTP 标题信息（http-equiv）和页面描述信息（name）。
+#### 1、http-equiv 属性的 Content-Type 值（显示字符集的设定）
 
 说明：设定页面使用的字符集，用以说明主页制作所使用的文字语言，浏览器会根据此来调用相应的字符集显示 page 内容。
 
@@ -117,7 +117,7 @@ Firefox 浏览器内置了 自定义设计视图 的功能，可以通过 Firefo
 
 注意：该 meta 标签定义了 HTML 页面所使用的字符集为 utf-8 ，就是万国码。它可以在同一页面显示中文简体、繁体及其它语言（如日文，韩文）等。
 
-####2、name 属性的 viewport 值（移动屏幕的缩放）
+#### 2、name 属性的 viewport 值（移动屏幕的缩放）
 
 也就是可视区域。对于桌面浏览器，我们都很清楚 viewport 是什么，就是除去了所有工具栏、状态栏、滚动条等等之后用于看网页的区域，这是真正有效的区域。由于移动设备屏幕宽度不同于传统 web，因此我们需要改变 viewport 值。
 
@@ -155,7 +155,7 @@ body {
 }
 ```
 
-####3、name 属性的 format-detection 值（忽略页面中的数字识别为电话号码）
+#### 3、name 属性的 format-detection 值（忽略页面中的数字识别为电话号码）
 
 ```html
 <meta name="format-detection" content="telephone=no" />
@@ -166,7 +166,7 @@ body {
 
 * 若需要启用电话功能将 telephone=yes 即可，若在页面上面有 Google Maps, iTunes 和 YouTube 的链接会在ios设备上打开相应的程序组件。
 
-####4、name 属性的 apple-mobile-web-app-capable 值（网站开启对 web app 程序的支持）
+#### 4、name 属性的 apple-mobile-web-app-capable 值（网站开启对 web app 程序的支持）
 
 ```html
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -178,7 +178,7 @@ body {
 
 * 该 meta 可以看出内容为“苹果设备 web 应用程序 xx”，就是说该 meta 是专门定义 web 应用的。
 
-####5、name 属性的 apple-mobile-web-app-status-bar-style 值（改变顶部状态条的颜色）
+#### 5、name 属性的 apple-mobile-web-app-status-bar-style 值（改变顶部状态条的颜色）
 
 ```html
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -190,13 +190,13 @@ body {
 
 注意：若值为“black-translucent”将会占据页面位置，浮在页面上方（会覆盖页面 20px 高度 iphone4 和 itouch4 的 Retina 屏幕为 40px ）。
 
-####6、name 属性设置作者姓名及联系方式
+#### 6、name 属性设置作者姓名及联系方式
 
 ```html
 <meta name="author" contect="liudanyun, liudy1024@163.com" />
 ```
 
-###二、苹果 Web App 其他设置：
+### 二、苹果 Web App 其他设置：
 
 当然，配合 Web App 的 icon 和启动界面需要额外的两端代码进行设定，如下所示：
 
@@ -228,7 +228,7 @@ body {
 
 关于 link 方面还有更多的参数设置（例如：iPod、iPad、iPhone 不同尺寸不同图标），可以查看官方标准文档：[Configuring Web Applications](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html "Applications")
 
-##本资料很多引用了指尖上的js系列，在此向作者表示感谢
+## 本资料很多引用了指尖上的js系列，在此向作者表示感谢
 
 [对于Touch的处理](http://www.cnblogs.com/pifoo/archive/2011/05/23/webkit-touch-event-1.html "article1")
 
@@ -274,11 +274,11 @@ meta标签，这些meta标签在开发webapp时起到非常重要的作用
 当你用手指拖动时，其实拖的不是页面，而是viewport。浏览器行为的改变不止是滚动条，交互事件也跟普通桌面不一样。
 (请参考：指尖的下JS 系列文章)
 
-##其中viewport相关的知识也可以参考大漠的文章
+## 其中viewport相关的知识也可以参考大漠的文章
 
 [此像素非彼像素](http://www.w3cplus.com/css/A-pixel-is-not-a-pixel-is-not-a-pixel.html "pixel")
 
-##点击与click事件
+## 点击与click事件
 
 对于a标记的点击导航，默认是在onclick事件中处理的。而移动客户端对onclick的响应相比PC浏览器有着明显的几百毫秒延迟。
 
@@ -305,7 +305,7 @@ body{-webkit-overflow-scrolling: touch;}
 我一开始也使用，不过自从用了```-webkit-overflow-scrolling: ```touch;样式后，就完全可以抛弃第三方类库了，把它加在```body{}```区域，所有的```overflow```需要滚动的都可以生效了。
 
 
-##页面描述
+## 页面描述
 
 ```html
 <link rel="apple-touch-icon-precomposed" href="http://www.xxx.com/App_icon_114.png" />
@@ -345,7 +345,7 @@ body{-webkit-overflow-scrolling: touch;}
 ```
  
 
-##样式表:
+## 样式表:
 
 ```html
 <link rel=”apple-touch-startup-image” href=”startup.png” /> // 设置开始页面图片
@@ -364,30 +364,30 @@ body{-webkit-overflow-scrolling: touch;}
 </style>
 ```
 
-##手机浏览器常用手势动作监听封装(配合zepto,来自mansonchor)
+## 手机浏览器常用手势动作监听封装(配合zepto,来自mansonchor)
 
 [手机浏览器常用手势动作监听封装](http://wo.poco.cn/manson/post/id/268780)
 
-##事件 ： (请参考：指尖的下JS 系列文章)
+## 事件 ： (请参考：指尖的下JS 系列文章)
 
-##手势事件
+## 手势事件
 * touchstart            //当手指接触屏幕时触发
 * touchmove           //当已经接触屏幕的手指开始移动后触发
 * touchend             //当手指离开屏幕时触发
 * touchcancel
 
-##触摸事件
+## 触摸事件
 * gesturestart          //当两个手指接触屏幕时触发
 * gesturechange      //当两个手指接触屏幕后开始移动时触发
 * gestureend
 
-##屏幕旋转事件
+## 屏幕旋转事件
 * onorientationchange    
 
-##检测触摸屏幕的手指何时改变方向
+## 检测触摸屏幕的手指何时改变方向
 * orientationchange      
 
-##touch事件支持的相关属性
+## touch事件支持的相关属性
 
 * touches
 * targetTouches
@@ -405,7 +405,7 @@ body{-webkit-overflow-scrolling: touch;}
 * 屏幕旋转事件：onorientationchange
 添加屏幕旋转事件侦听，可随时发现屏幕旋转状态（左旋、右旋还是没旋）。例子：
 
-##判断屏幕是否旋转
+## 判断屏幕是否旋转
 
 ```js
 function orientationChange() {
@@ -426,7 +426,7 @@ function orientationChange() {
 };
 ```
 
-##添加事件监听
+## 添加事件监听
 
 ```js
 addEventListener('load', function(){
@@ -436,7 +436,7 @@ addEventListener('load', function(){
 ```
  
 
-##隐藏地址栏 & 处理事件的时候，防止滚动条出现：
+## 隐藏地址栏 & 处理事件的时候，防止滚动条出现：
 
 ```js
 // 隐藏地址栏  & 处理事件的时候 ，防止滚动条出现
@@ -445,7 +445,7 @@ addEventListener('load', function(){
 });
 ```
 
-##双手指滑动事件：
+## 双手指滑动事件：
 
 ```js
 // 双手指滑动事件
@@ -458,7 +458,7 @@ function twoFingerScroll(ev) {
 };
 ```
 
-##判断是否为iPhone：
+## 判断是否为iPhone：
 
 ```js
 // 判断是否为 iPhone ：
@@ -467,7 +467,7 @@ function isAppleMobile() {
 };
 ```
 
-##localStorage:
+## localStorage:
 
 ```js
 var v = localStorage.getItem('n') ? localStorage.getItem('n') : ""; // 如果名称是  n 的数据存在 ，则将其读出 ，赋予变量  v  。
@@ -475,7 +475,7 @@ localStorage.setItem('n', v); // 写入名称为 n、值为  v  的数据
 localStorage.removeItem('n'); // 删除名称为  n  的数据
 ```
 
-##使用特殊链接：
+## 使用特殊链接：
 如果你关闭自动识别后 ，又希望某些电话号码能够链接到 iPhone 的拨号功能 ，那么可以通过这样来声明电话链接 ,
 
 ```html 
@@ -488,14 +488,14 @@ localStorage.removeItem('n'); // 删除名称为  n  的数据
 ```html 
 <td onclick="location.href='tel:122'"></td>
 ```
-##自动大写与自动修正
+## 自动大写与自动修正
 要关闭这两项功能，可以通过autocapitalize 与autocorrect 这两个选项：
 
 ```html 
 <input type="text" autocapitalize="off" autocorrect="off" />
 ```
  
-##WebKit CSS:
+## WebKit CSS:
 ①“盒模型”的具体描述性质的包围盒块内容，包括边界，填充等等。
 
 ```
@@ -655,7 +655,7 @@ translate(*,*) 坐标移动。translateX 和translateY，可简写为：translat
 ```
  
  
-##利用media query监听
+## 利用media query监听
 
 media query相信大部分人已经使用过了。其实javascript可以配合media query这么用：
 
@@ -673,21 +673,21 @@ function handleOrientationChange(mql) {
 
 我个人理解，是借助了media query接口做的事件监听，所以很强大！
 
-##锁定 viewport
+## 锁定 viewport
 
 ```js
 ontouchmove="event.preventDefault()" //锁定viewport，任何屏幕操作不移动用户界面（弹出键盘除外）。
 ```
  
 
-##被点击元素的外观变化，可以使用样式来设定：
+## 被点击元素的外观变化，可以使用样式来设定：
 
 ```
 -webkit-tap-highlight-color: 颜色
 ```
  
 
-##侦测iPhone/iPod
+## 侦测iPhone/iPod
 开发特定设备的移动网站，首先要做的就是设备侦测了。下面是使用Javascript侦测iPhone/iPod的UA，然后转向到专属的URL。
 
 ```js
@@ -708,21 +708,21 @@ if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') || strstr($_SERVER['HTTP_USER_AG
 }
 ```
 
-##阻止旋转屏幕时自动调整字体大小
+## 阻止旋转屏幕时自动调整字体大小
 
 ```css
 html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}
 ```
  
 
-##iPhone才识别的CSS
+## iPhone才识别的CSS
 如果不想设备侦测，可以用CSS媒体查询来专为iPhone/iPod定义样式。
 
 ```css
 @media screen and (max-device-width: 480px) {}
 ```
 
-##缩小图片
+## 缩小图片
 网站的大图通常宽度都超过480像素，如果用前面的代码限制了缩放，这些图片在iPhone版显示显然会超过屏幕。好在iPhone机能还够，我们可以用CSS让iPhone自动将大图片缩小显示。
 
 ```css
@@ -842,7 +842,7 @@ click 事件普遍 300ms 的延迟
 -webkit-backface-visibility: hidden;
  ```
 
-##常见的IPHONE 和 Android屏幕参数。
+## 常见的IPHONE 和 Android屏幕参数。
 
 * 设备	分辨率	设备像素比率
 * Android LDPI	320×240	0.75
@@ -878,33 +878,33 @@ Iphone 4的一个 CSS 像素实际上表现为一块 2×2 的像素。所以图�
 }
 ```
 
-##ie10的特殊鼠标事件
+## ie10的特殊鼠标事件
 
 [IE10 事件监听](http://www.mansonchor.com/blog/blog_detail_73.html "article5")
 
-##不让android识别邮箱
+## 不让android识别邮箱
 
 ```html
 <meta content="email=no" name="format-detection" />
 ```
 	
-##禁止ios弹出各种操作窗口
+## 禁止ios弹出各种操作窗口
 
 ```css
 -webkit-touch-callout:none
 ```
 
-##禁止用户选中文字
+## 禁止用户选中文字
 
 ```css
 -webkit-user-select:none
 ```
 	
-##动画效果中，使用translate比使用定位性能高
+## 动画效果中，使用translate比使用定位性能高
 
 [Why Moving Elements With Translate() Is Better Than Pos:abs Top/left](http://paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/)
 
-##拿到滚动条
+## 拿到滚动条
 
 ```
 window.scrollY
@@ -1272,7 +1272,7 @@ function is_weixin(){
 
 ```<https://github.com/madrobby/zepto/blob/master/src/touch.js>``` 去掉61行,其实就是使用原生的滚动
 
-###iscroll4
+### iscroll4
 
 ```
  iscroll4的几个bug(来自<http://www.mansonchor.com/blog/blog_detail_64.html>内有详细讲解)
